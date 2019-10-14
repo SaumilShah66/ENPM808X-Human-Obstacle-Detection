@@ -18,7 +18,7 @@ Plethora of work has been done to solve the problem of human detection. Color ba
 
 We have designed a module, for the ACME Robotics, to detect the positions of humans around the robot. The module works by taking an image and processing it to produce rectangular bounding regions around the detected humans in the environment. The pixel coordinates of the bounding boxes can then be to track the location of human with respect to the robot’s frame of reference. Such a system will help in human obstacle detection and avoidance when the robot is navigation in the real world. 
 
-In order to implement this module, a dataset with set of images containing humans (positive images) and a set not containing humans (negative images). First, Histogram of oriented gradient (HOG) features will be calculated for each of the image. These HOG vectors will then be used as input to train the Support Vector Machine classifier to detect the location of humans in each image. The output of the SVM is compared to the ground truth labels and the error is then fed back to train the classifier. This trained classifier can then be used for real time estimation of human’s position. Training feature will be provided with the module so that it can be improved over time with adding more training data.
+In order to implement this module, a dataset with set of images containing humans (positive images) and a set not containing humans (negative images) is needed. We plan to use [INRIA Person Dataset](http://pascal.inrialpes.fr/data/human/). First, Histogram of oriented gradient (HOG) features will be calculated for each of the image. These HOG vectors will then be used as input to train the Support Vector Machine classifier to detect the location of humans in each image. The output of the SVM is compared to the ground truth labels and the error is then fed back to train the classifier. This trained classifier can then be used for real time estimation of human’s position. Training feature will be provided with the module so that it can be improved over time with adding more training data.
 
 We have used openCV 3.3.0 as a third party library, which is covered under the 3-clause BSD License.
    
@@ -125,7 +125,7 @@ sudo apt-get install doxygen
 ```
 Now from the cloned directory run:
 ```
-doxygen Doxygen
+doxygen doxygen
 ```
 
 Generated doxygen files are in html format and you can find them in ./docs folder. With the following command
