@@ -19,20 +19,40 @@
  * AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
  * LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
- * SOFTWARE.
+ * SOFTWARE. 
  ******************************************************************************/
 
 /**
- * @file      main.cpp
+ * @file      DataLoader.cpp
  * @author    Naman Gupta (namangupta98) Driver
  * @author    Saumil Shah (SaumilShah66) Design Keeper
  * @author    Aman Virmani (AmanVirmani) Navigator
  * @copyright MIT License
- * @brief     main implementation for human obstacle detection
+ * @brief     DataLoader method implementation 
  */
 
-#include <iostream>
+#include <DataLoader.hpp>
 
-int main() {
-  return 0;
+DataLoader::DataLoader() {
+}
+
+cv::Mat DataLoader::createHOG(cv::Mat inputImage) {
+}
+
+cv::Mat DataLoader::loadImage(std::string imageName) {
+}
+
+cv::Mat DataLoader::Camera(int cameraCode) {
+}
+
+std::vector<cv::Mat> DataLoader::loadVideo(std::string videoFileName) {
+}
+
+std::vector<cv::Mat> DataLoader::loadFromDirectory(std::string directoryName) {
+}
+
+DataLoader::~DataLoader() {
+}
+
+bool DataLoader::directoryExist(std::string directoryName) {
 }

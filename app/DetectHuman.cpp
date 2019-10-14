@@ -19,20 +19,41 @@
  * AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
  * LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
- * SOFTWARE.
+ * SOFTWARE. 
  ******************************************************************************/
 
 /**
- * @file      main.cpp
+ * @file      DetectHuman.cpp
  * @author    Naman Gupta (namangupta98) Driver
  * @author    Saumil Shah (SaumilShah66) Design Keeper
  * @author    Aman Virmani (AmanVirmani) Navigator
  * @copyright MIT License
- * @brief     main implementation for human obstacle detection
+ * @brief     DetectHuman Class declaration
+ * @detail    Implementation of class methods to detect humans using an SVM model
+ *            trained on HOG features
  */
+#include <DetectHuman.hpp>
 
-#include <iostream>
+DetectHuman::DetectHuman() {
+}
 
-int main() {
-  return 0;
+DetectHuman::DetectHuman(std::string classifierFilename) {
+}
+
+bool DetectHuman::loadModel(std::string fileNameOfTrainedClassifier) {
+}
+
+std::vector<std::vector<int>> DetectHuman::findHumans(cv::Mat frame) {
+}
+
+void DetectHuman::setClassifierFilename(std::string filenameOfClassifier) {
+}
+
+std::string DetectHuman::getClassifierFilename() {
+}
+
+bool DetectHuman::fileExist(std::string fileName) {
+}
+
+DetectHuman::~DetectHuman() {
 }

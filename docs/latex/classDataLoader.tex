@@ -1,0 +1,168 @@
+\hypertarget{classDataLoader}{}\doxysection{Data\+Loader Class Reference}
+\label{classDataLoader}\index{DataLoader@{DataLoader}}
+
+
+class \mbox{\hyperlink{classDataLoader}{Data\+Loader}} The class \mbox{\hyperlink{classDataLoader}{Data\+Loader}} captures image/video from camera sensor or files and creates H\+OG feature for every image.  
+
+
+
+
+{\ttfamily \#include $<$Data\+Loader.\+hpp$>$}
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classDataLoader_a1e3bfa6d0116f0ecc8ec4596e35a09f0}{Data\+Loader}} ()
+\begin{DoxyCompactList}\small\item\em constructor \mbox{\hyperlink{classDataLoader}{Data\+Loader}} \end{DoxyCompactList}\item 
+cv\+::\+Mat \mbox{\hyperlink{classDataLoader_ae03c549909bc20eb93556ec880fc0cb3}{create\+H\+OG}} (cv\+::\+Mat input\+Image)
+\begin{DoxyCompactList}\small\item\em Function to create H\+OG features. \end{DoxyCompactList}\item 
+cv\+::\+Mat \mbox{\hyperlink{classDataLoader_a5368b3a970f681058ff7ac92d6d695cb}{load\+Image}} (std\+::string image\+Name)
+\begin{DoxyCompactList}\small\item\em Function to load images. \end{DoxyCompactList}\item 
+cv\+::\+Mat \mbox{\hyperlink{classDataLoader_a3e6681a241f7a439aaea6b3ffdcbc301}{Camera}} (int camera\+Code)
+\begin{DoxyCompactList}\small\item\em Function to read data from camera sensor. \end{DoxyCompactList}\item 
+std\+::vector$<$ cv\+::\+Mat $>$ \mbox{\hyperlink{classDataLoader_afc169b8783dac0eba51db8d9114ee9e7}{load\+Video}} (std\+::string video\+File\+Name)
+\begin{DoxyCompactList}\small\item\em Function to load video from a video file. \end{DoxyCompactList}\item 
+std\+::vector$<$ cv\+::\+Mat $>$ \mbox{\hyperlink{classDataLoader_aa041f12b158eeb0e392052dc4a6c14cc}{load\+From\+Directory}} (std\+::string directory\+Name)
+\begin{DoxyCompactList}\small\item\em Function to load all the images from a directory. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classDataLoader_a30951bb663d7a5ff79a4443de0f943ed}{$\sim$\+Data\+Loader}} ()
+\begin{DoxyCompactList}\small\item\em destructor \mbox{\hyperlink{classDataLoader}{Data\+Loader}} \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+class \mbox{\hyperlink{classDataLoader}{Data\+Loader}} The class \mbox{\hyperlink{classDataLoader}{Data\+Loader}} captures image/video from camera sensor or files and creates H\+OG feature for every image. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classDataLoader_a1e3bfa6d0116f0ecc8ec4596e35a09f0}\label{classDataLoader_a1e3bfa6d0116f0ecc8ec4596e35a09f0}} 
+\index{DataLoader@{DataLoader}!DataLoader@{DataLoader}}
+\index{DataLoader@{DataLoader}!DataLoader@{DataLoader}}
+\doxysubsubsection{\texorpdfstring{DataLoader()}{DataLoader()}}
+{\footnotesize\ttfamily Data\+Loader\+::\+Data\+Loader (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+constructor \mbox{\hyperlink{classDataLoader}{Data\+Loader}} 
+
+
+\begin{DoxyParams}{Parameters}
+{\em none} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+none 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classDataLoader_a30951bb663d7a5ff79a4443de0f943ed}\label{classDataLoader_a30951bb663d7a5ff79a4443de0f943ed}} 
+\index{DataLoader@{DataLoader}!````~DataLoader@{$\sim$DataLoader}}
+\index{````~DataLoader@{$\sim$DataLoader}!DataLoader@{DataLoader}}
+\doxysubsubsection{\texorpdfstring{$\sim$DataLoader()}{~DataLoader()}}
+{\footnotesize\ttfamily Data\+Loader\+::$\sim$\+Data\+Loader (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+destructor \mbox{\hyperlink{classDataLoader}{Data\+Loader}} 
+
+
+\begin{DoxyParams}{Parameters}
+{\em none} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+none 
+\end{DoxyReturn}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classDataLoader_a3e6681a241f7a439aaea6b3ffdcbc301}\label{classDataLoader_a3e6681a241f7a439aaea6b3ffdcbc301}} 
+\index{DataLoader@{DataLoader}!Camera@{Camera}}
+\index{Camera@{Camera}!DataLoader@{DataLoader}}
+\doxysubsubsection{\texorpdfstring{Camera()}{Camera()}}
+{\footnotesize\ttfamily cv\+::\+Mat Data\+Loader\+::\+Camera (\begin{DoxyParamCaption}\item[{int}]{camera\+Code }\end{DoxyParamCaption})}
+
+
+
+Function to read data from camera sensor. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em camera\+Code} & of type int \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+image of type cv\+::\+Mat The following function takes image from camera and returns image. Camera code defines which camera sensor\textquotesingle{}s data you want to read 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classDataLoader_ae03c549909bc20eb93556ec880fc0cb3}\label{classDataLoader_ae03c549909bc20eb93556ec880fc0cb3}} 
+\index{DataLoader@{DataLoader}!createHOG@{createHOG}}
+\index{createHOG@{createHOG}!DataLoader@{DataLoader}}
+\doxysubsubsection{\texorpdfstring{createHOG()}{createHOG()}}
+{\footnotesize\ttfamily cv\+::\+Mat Data\+Loader\+::create\+H\+OG (\begin{DoxyParamCaption}\item[{cv\+::\+Mat}]{input\+Image }\end{DoxyParamCaption})}
+
+
+
+Function to create H\+OG features. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em input\+Image} & of type cv\+::\+Mat \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+H\+OG feature of type cv\+::\+Mat The following function takes an input image and calculates H\+OG feature which is an input of S\+VM model 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classDataLoader_aa041f12b158eeb0e392052dc4a6c14cc}\label{classDataLoader_aa041f12b158eeb0e392052dc4a6c14cc}} 
+\index{DataLoader@{DataLoader}!loadFromDirectory@{loadFromDirectory}}
+\index{loadFromDirectory@{loadFromDirectory}!DataLoader@{DataLoader}}
+\doxysubsubsection{\texorpdfstring{loadFromDirectory()}{loadFromDirectory()}}
+{\footnotesize\ttfamily std\+::vector$<$cv\+::\+Mat$>$ Data\+Loader\+::load\+From\+Directory (\begin{DoxyParamCaption}\item[{std\+::string}]{directory\+Name }\end{DoxyParamCaption})}
+
+
+
+Function to load all the images from a directory. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em directory\+Name} & of type string \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+images of type std\+::vector$<$cv\+::\+Mat$>$ The following function returns images from a specific directory 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classDataLoader_a5368b3a970f681058ff7ac92d6d695cb}\label{classDataLoader_a5368b3a970f681058ff7ac92d6d695cb}} 
+\index{DataLoader@{DataLoader}!loadImage@{loadImage}}
+\index{loadImage@{loadImage}!DataLoader@{DataLoader}}
+\doxysubsubsection{\texorpdfstring{loadImage()}{loadImage()}}
+{\footnotesize\ttfamily cv\+::\+Mat Data\+Loader\+::load\+Image (\begin{DoxyParamCaption}\item[{std\+::string}]{image\+Name }\end{DoxyParamCaption})}
+
+
+
+Function to load images. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em image\+Name} & of type string \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+image of type cv\+::\+Mat The following function takes an image name and reads it from disk 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classDataLoader_afc169b8783dac0eba51db8d9114ee9e7}\label{classDataLoader_afc169b8783dac0eba51db8d9114ee9e7}} 
+\index{DataLoader@{DataLoader}!loadVideo@{loadVideo}}
+\index{loadVideo@{loadVideo}!DataLoader@{DataLoader}}
+\doxysubsubsection{\texorpdfstring{loadVideo()}{loadVideo()}}
+{\footnotesize\ttfamily std\+::vector$<$cv\+::\+Mat$>$ Data\+Loader\+::load\+Video (\begin{DoxyParamCaption}\item[{std\+::string}]{video\+File\+Name }\end{DoxyParamCaption})}
+
+
+
+Function to load video from a video file. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em video\+File\+Name} & of type string \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+frames of video of type std\+::vector$<$cv\+::\+Mat$>$ The following function parses all the frames from given video file 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+include/Data\+Loader.\+hpp\end{DoxyCompactItemize}
