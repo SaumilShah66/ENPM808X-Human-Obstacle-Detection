@@ -24,9 +24,9 @@
 
 /**
  * @file      DataLoader.h
- * @author    Naman Gupta (namangupta98)
- * @author    Saumil Shah (SaumilShah66)
- * @author    Aman Virmani (AmanVirmani)
+ * @author    Naman Gupta (namangupta98) Driver
+ * @author    Saumil Shah (SaumilShah66) Design Keeper
+ * @author    Aman Virmani (AmanVirmani) Navigator
  * @copyright MIT License
  * @brief     DataLoader Class declaration
  * @detail    Declared functions Class to read data from files and camera 
