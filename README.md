@@ -40,17 +40,18 @@ Since RGB cameras don’t perform in low light conditions it might cause trouble
 
 We’ll be using Agile Development Process and quality will be ensured by unit testing, valgrind debugging and cppcheck.
 Test Driven Development will be used. It is a software development process that relies on the following sequence: 
-Add a test
-Run all tests and see if the new one fails
-Write some code
-Run tests
-Refactor code
-Repeat
+Add a test->
+Run all tests and see if the new one fails->
+Write some code->
+Run tests->
+Refactor code->
+Repeat.
 
-Modern C++ (Programming Language)
-CMake (Build System)
-OpenCV library (new BSD License)
-Math library (new BSD License)
+* Ubuntu 16.04 (Operating System)
+* Modern C++ (Programming Language)
+* CMake (Build System)
+* OpenCV library (new BSD License)
+* Math library (new BSD License)
 
 ## Dependencies
 
