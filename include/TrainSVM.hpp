@@ -23,7 +23,7 @@
  ******************************************************************************/
 
 /**
- * @file      TrainSVM.h
+ * @file      TrainSVM.hpp
  * @author    Naman Gupta (namangupta98) Driver
  * @author    Saumil Shah (SaumilShah66) Design Keeper
  * @author    Aman Virmani (AmanVirmani) Navigator
