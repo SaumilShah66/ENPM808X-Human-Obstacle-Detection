@@ -23,7 +23,7 @@
  ******************************************************************************/
 
 /**
- * @file      DataLoader.h
+ * @file      DataLoader.cpp
  * @author    Naman Gupta (namangupta98) Driver
  * @author    Saumil Shah (SaumilShah66) Design Keeper
  * @author    Aman Virmani (AmanVirmani) Navigator
@@ -37,30 +37,22 @@ DataLoader::DataLoader() {
 }
 
 cv::Mat DataLoader::createHOG(cv::Mat inputImage) {
- }
-
-cv::Mat DataLoader::loadImage(std::string imageName){
-
- }
-
-cv::Mat DataLoader::Camera(int cameraCode){
-
 }
 
-std::vector<cv::Mat> DataLoader::loadVideo(std::string videoFileName){
-
+cv::Mat DataLoader::loadImage(std::string imageName) {
 }
 
-std::vector<cv::Mat> DataLoader::loadFromDirectory(std::string directoryName){
-
+cv::Mat DataLoader::Camera(int cameraCode) {
 }
 
-DataLoader::~DataLoader(){
-
+std::vector<cv::Mat> DataLoader::loadVideo(std::string videoFileName) {
 }
 
-bool DataLoader::directoryExist(std::string directoryName){
-	
+std::vector<cv::Mat> DataLoader::loadFromDirectory(std::string directoryName) {
 }
 
+DataLoader::~DataLoader() {
+}
 
+bool DataLoader::directoryExist(std::string directoryName) {
+}

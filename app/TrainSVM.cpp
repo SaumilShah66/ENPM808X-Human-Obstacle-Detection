@@ -23,58 +23,47 @@
  ******************************************************************************/
 
 /**
- * @file      TrainSVM.h
+ * @file      TrainSVM.cpp
  * @author    Naman Gupta (namangupta98) Driver
  * @author    Saumil Shah (SaumilShah66) Design Keeper
  * @author    Aman Virmani (AmanVirmani) Navigator
  * @copyright MIT License
  * @brief     TrainSVM Class declaration
- * @detail    Declared functions Class to train SVM using data from class 
+ * @detail    Implementation of class methods to train SVM using data from class
  * DataLoader
  */
 
 #include <TrainSVM.hpp>
 
 TrainSVM::TrainSVM() {
-
 }
 
 TrainSVM::TrainSVM(std::vector<double> parameters) {
-
 }
 
 void TrainSVM::setParameters(std::vector<double> parameters) {
-
 }
 
 void TrainSVM::setPositiveTrainingImagesDirectory(std::string directoryPath) {
-
 }
 
 void TrainSVM::setNegativeTrainingImagesDirectory(std::string directoryPath) {
-
 }
 
 void TrainSVM::setGroundTruthValuesFilename(std::string filesWithOutputs) {
-
 }
 
 std::string TrainSVM::getPositiveTrainingImagesDirectory() {
-
 }
 
 std::string TrainSVM::getNegativeTrainingImagesDirectory() {
-
 }
 
 std::string TrainSVM::getGroundTruthValuesFilename() {
-
 }
 
 std::vector<double> TrainSVM::getParameters() {
-
 }
 
 TrainSVM::~TrainSVM() {
-
 }

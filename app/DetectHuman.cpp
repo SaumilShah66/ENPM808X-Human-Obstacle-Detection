@@ -23,45 +23,37 @@
  ******************************************************************************/
 
 /**
- * @file      DetectHuman.h
+ * @file      DetectHuman.cpp
  * @author    Naman Gupta (namangupta98) Driver
  * @author    Saumil Shah (SaumilShah66) Design Keeper
  * @author    Aman Virmani (AmanVirmani) Navigator
  * @copyright MIT License
  * @brief     DetectHuman Class declaration
- * @detail    Declared functions Class to detect humans using an SVM model 
+ * @detail    Implementation of class methods to detect humans using an SVM model
  *            trained on HOG features
  */
 #include <DetectHuman.hpp>
 
 DetectHuman::DetectHuman() {
-
 }
 
 DetectHuman::DetectHuman(std::string classifierFilename) {
-
 }
 
 bool DetectHuman::loadModel(std::string fileNameOfTrainedClassifier) {
-
 }
 
 std::vector<std::vector<int>> DetectHuman::findHumans(cv::Mat frame) {
-
 }
 
 void DetectHuman::setClassifierFilename(std::string filenameOfClassifier) {
-
 }
 
 std::string DetectHuman::getClassifierFilename() {
-
 }
 
 bool DetectHuman::fileExist(std::string fileName) {
-	
 }
 
 DetectHuman::~DetectHuman() {
-
 }
