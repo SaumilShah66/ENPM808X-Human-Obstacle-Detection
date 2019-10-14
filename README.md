@@ -47,10 +47,11 @@ Run tests
 Refactor code
 Repeat
 
-Modern C++ (Programming Language)
-CMake (Build System)
-OpenCV library (new BSD License)
-Math library (new BSD License)
+*Ubuntu 16.04 (Operating System)
+*Modern C++ (Programming Language)
+*CMake (Build System)
+*OpenCV library (new BSD License)
+*Math library (new BSD License)
 
 ## Dependencies
 
