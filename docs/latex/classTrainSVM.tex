@@ -1,0 +1,248 @@
+\hypertarget{classTrainSVM}{}\doxysection{Train\+S\+VM Class Reference}
+\label{classTrainSVM}\index{TrainSVM@{TrainSVM}}
+
+
+class \mbox{\hyperlink{classDetectHuman}{Detect\+Human}} The class \mbox{\hyperlink{classDetectHuman}{Detect\+Human}} uses a trained S\+VM model to detect humans in an image and returns the pixel coordinates of the bounding boxes containing humans in an image  
+
+
+
+
+{\ttfamily \#include $<$Train\+S\+V\+M.\+hpp$>$}
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classTrainSVM_a227c01871899d67da2afa4d4b38e6283}{Train\+S\+VM}} (std\+::vector$<$ double $>$ parameters)
+\begin{DoxyCompactList}\small\item\em constructor \mbox{\hyperlink{classTrainSVM}{Train\+S\+VM}} \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classTrainSVM_a2d30e456094a3eee9aae4aad2023a672}{Train\+S\+VM}} ()
+\begin{DoxyCompactList}\small\item\em constructor \mbox{\hyperlink{classTrainSVM}{Train\+S\+VM}} \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classTrainSVM_a35867dc23936b50846fe96531d4d4a73}{set\+Parameters}} (std\+::vector$<$ double $>$ parameters)
+\begin{DoxyCompactList}\small\item\em Function takes S\+VM parameters from user. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classTrainSVM_ac3220536cb8d9c072d19f1fabc069440}{set\+Positive\+Training\+Images\+Directory}} (std\+::string directory\+Path)
+\begin{DoxyCompactList}\small\item\em Function sets directory path of positive training images. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classTrainSVM_ad387f9b2c1ca62c1712f566612e4a654}{set\+Negative\+Training\+Images\+Directory}} (std\+::string directory\+Path)
+\begin{DoxyCompactList}\small\item\em Function sets directory path of negative training images. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classTrainSVM_ae3300281d0b20befcda6f8e92cfa4908}{set\+Ground\+Truth\+Values\+Filename}} (std\+::string files\+With\+Outputs)
+\begin{DoxyCompactList}\small\item\em Function sets ground truth values for training data. \end{DoxyCompactList}\item 
+std\+::string \mbox{\hyperlink{classTrainSVM_a1befb683f7871c5ed2b160472b7c0df8}{get\+Positive\+Training\+Images\+Directory}} ()
+\begin{DoxyCompactList}\small\item\em Function gets the directory name. \end{DoxyCompactList}\item 
+std\+::string \mbox{\hyperlink{classTrainSVM_a4da57bd1120e0d0678cfe98ab5f15f22}{get\+Negative\+Training\+Images\+Directory}} ()
+\begin{DoxyCompactList}\small\item\em Function gets the directory name. \end{DoxyCompactList}\item 
+std\+::string \mbox{\hyperlink{classTrainSVM_aeb07a3e3e3efadc3e19d7ee0b4057e43}{get\+Ground\+Truth\+Values\+Filename}} ()
+\begin{DoxyCompactList}\small\item\em Function gets the filename. \end{DoxyCompactList}\item 
+std\+::vector$<$ double $>$ \mbox{\hyperlink{classTrainSVM_acdad6f5d3d2aacfed50d2bda40b772fa}{get\+Parameters}} ()
+\begin{DoxyCompactList}\small\item\em Function gives parameters of S\+VM classifier. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classTrainSVM_acd68b7bd056d7497feb97185b6c59f76}{$\sim$\+Train\+S\+VM}} ()
+\begin{DoxyCompactList}\small\item\em destructor \mbox{\hyperlink{classTrainSVM}{Train\+S\+VM}} \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+class \mbox{\hyperlink{classDetectHuman}{Detect\+Human}} The class \mbox{\hyperlink{classDetectHuman}{Detect\+Human}} uses a trained S\+VM model to detect humans in an image and returns the pixel coordinates of the bounding boxes containing humans in an image 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classTrainSVM_a227c01871899d67da2afa4d4b38e6283}\label{classTrainSVM_a227c01871899d67da2afa4d4b38e6283}} 
+\index{TrainSVM@{TrainSVM}!TrainSVM@{TrainSVM}}
+\index{TrainSVM@{TrainSVM}!TrainSVM@{TrainSVM}}
+\doxysubsubsection{\texorpdfstring{TrainSVM()}{TrainSVM()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily Train\+S\+V\+M\+::\+Train\+S\+VM (\begin{DoxyParamCaption}\item[{std\+::vector$<$ double $>$}]{parameters }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [explicit]}}
+
+
+
+constructor \mbox{\hyperlink{classTrainSVM}{Train\+S\+VM}} 
+
+
+\begin{DoxyParams}{Parameters}
+{\em classifier\+Filename} & of type string \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+none 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classTrainSVM_a2d30e456094a3eee9aae4aad2023a672}\label{classTrainSVM_a2d30e456094a3eee9aae4aad2023a672}} 
+\index{TrainSVM@{TrainSVM}!TrainSVM@{TrainSVM}}
+\index{TrainSVM@{TrainSVM}!TrainSVM@{TrainSVM}}
+\doxysubsubsection{\texorpdfstring{TrainSVM()}{TrainSVM()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily Train\+S\+V\+M\+::\+Train\+S\+VM (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+constructor \mbox{\hyperlink{classTrainSVM}{Train\+S\+VM}} 
+
+
+\begin{DoxyParams}{Parameters}
+{\em classifier\+Filename} & of type string \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+none 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classTrainSVM_acd68b7bd056d7497feb97185b6c59f76}\label{classTrainSVM_acd68b7bd056d7497feb97185b6c59f76}} 
+\index{TrainSVM@{TrainSVM}!````~TrainSVM@{$\sim$TrainSVM}}
+\index{````~TrainSVM@{$\sim$TrainSVM}!TrainSVM@{TrainSVM}}
+\doxysubsubsection{\texorpdfstring{$\sim$TrainSVM()}{~TrainSVM()}}
+{\footnotesize\ttfamily Train\+S\+V\+M\+::$\sim$\+Train\+S\+VM (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+destructor \mbox{\hyperlink{classTrainSVM}{Train\+S\+VM}} 
+
+
+\begin{DoxyParams}{Parameters}
+{\em none} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+none 
+\end{DoxyReturn}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classTrainSVM_aeb07a3e3e3efadc3e19d7ee0b4057e43}\label{classTrainSVM_aeb07a3e3e3efadc3e19d7ee0b4057e43}} 
+\index{TrainSVM@{TrainSVM}!getGroundTruthValuesFilename@{getGroundTruthValuesFilename}}
+\index{getGroundTruthValuesFilename@{getGroundTruthValuesFilename}!TrainSVM@{TrainSVM}}
+\doxysubsubsection{\texorpdfstring{getGroundTruthValuesFilename()}{getGroundTruthValuesFilename()}}
+{\footnotesize\ttfamily std\+::string Train\+S\+V\+M\+::get\+Ground\+Truth\+Values\+Filename (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Function gets the filename. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em none} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+file name containing ground truth values for training data of type string 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classTrainSVM_a4da57bd1120e0d0678cfe98ab5f15f22}\label{classTrainSVM_a4da57bd1120e0d0678cfe98ab5f15f22}} 
+\index{TrainSVM@{TrainSVM}!getNegativeTrainingImagesDirectory@{getNegativeTrainingImagesDirectory}}
+\index{getNegativeTrainingImagesDirectory@{getNegativeTrainingImagesDirectory}!TrainSVM@{TrainSVM}}
+\doxysubsubsection{\texorpdfstring{getNegativeTrainingImagesDirectory()}{getNegativeTrainingImagesDirectory()}}
+{\footnotesize\ttfamily std\+::string Train\+S\+V\+M\+::get\+Negative\+Training\+Images\+Directory (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Function gets the directory name. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em none} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+directory name containing negative training images type string 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classTrainSVM_acdad6f5d3d2aacfed50d2bda40b772fa}\label{classTrainSVM_acdad6f5d3d2aacfed50d2bda40b772fa}} 
+\index{TrainSVM@{TrainSVM}!getParameters@{getParameters}}
+\index{getParameters@{getParameters}!TrainSVM@{TrainSVM}}
+\doxysubsubsection{\texorpdfstring{getParameters()}{getParameters()}}
+{\footnotesize\ttfamily std\+::vector$<$double$>$ Train\+S\+V\+M\+::get\+Parameters (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Function gives parameters of S\+VM classifier. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em none} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+parameters of S\+VM of type std\+::vector$<$double$>$ 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classTrainSVM_a1befb683f7871c5ed2b160472b7c0df8}\label{classTrainSVM_a1befb683f7871c5ed2b160472b7c0df8}} 
+\index{TrainSVM@{TrainSVM}!getPositiveTrainingImagesDirectory@{getPositiveTrainingImagesDirectory}}
+\index{getPositiveTrainingImagesDirectory@{getPositiveTrainingImagesDirectory}!TrainSVM@{TrainSVM}}
+\doxysubsubsection{\texorpdfstring{getPositiveTrainingImagesDirectory()}{getPositiveTrainingImagesDirectory()}}
+{\footnotesize\ttfamily std\+::string Train\+S\+V\+M\+::get\+Positive\+Training\+Images\+Directory (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Function gets the directory name. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em none} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+directory name containing positive training images type string 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classTrainSVM_ae3300281d0b20befcda6f8e92cfa4908}\label{classTrainSVM_ae3300281d0b20befcda6f8e92cfa4908}} 
+\index{TrainSVM@{TrainSVM}!setGroundTruthValuesFilename@{setGroundTruthValuesFilename}}
+\index{setGroundTruthValuesFilename@{setGroundTruthValuesFilename}!TrainSVM@{TrainSVM}}
+\doxysubsubsection{\texorpdfstring{setGroundTruthValuesFilename()}{setGroundTruthValuesFilename()}}
+{\footnotesize\ttfamily void Train\+S\+V\+M\+::set\+Ground\+Truth\+Values\+Filename (\begin{DoxyParamCaption}\item[{std\+::string}]{files\+With\+Outputs }\end{DoxyParamCaption})}
+
+
+
+Function sets ground truth values for training data. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em files\+With\+Outputs} & of type string \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+none 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classTrainSVM_ad387f9b2c1ca62c1712f566612e4a654}\label{classTrainSVM_ad387f9b2c1ca62c1712f566612e4a654}} 
+\index{TrainSVM@{TrainSVM}!setNegativeTrainingImagesDirectory@{setNegativeTrainingImagesDirectory}}
+\index{setNegativeTrainingImagesDirectory@{setNegativeTrainingImagesDirectory}!TrainSVM@{TrainSVM}}
+\doxysubsubsection{\texorpdfstring{setNegativeTrainingImagesDirectory()}{setNegativeTrainingImagesDirectory()}}
+{\footnotesize\ttfamily void Train\+S\+V\+M\+::set\+Negative\+Training\+Images\+Directory (\begin{DoxyParamCaption}\item[{std\+::string}]{directory\+Path }\end{DoxyParamCaption})}
+
+
+
+Function sets directory path of negative training images. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em directory\+Path} & of type string \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+none 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classTrainSVM_a35867dc23936b50846fe96531d4d4a73}\label{classTrainSVM_a35867dc23936b50846fe96531d4d4a73}} 
+\index{TrainSVM@{TrainSVM}!setParameters@{setParameters}}
+\index{setParameters@{setParameters}!TrainSVM@{TrainSVM}}
+\doxysubsubsection{\texorpdfstring{setParameters()}{setParameters()}}
+{\footnotesize\ttfamily void Train\+S\+V\+M\+::set\+Parameters (\begin{DoxyParamCaption}\item[{std\+::vector$<$ double $>$}]{parameters }\end{DoxyParamCaption})}
+
+
+
+Function takes S\+VM parameters from user. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em parameters} & of type std\+:vector$<$double$>$ \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+none The following function gives parameters to S\+VM classifier which are needed to train S\+VM 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classTrainSVM_ac3220536cb8d9c072d19f1fabc069440}\label{classTrainSVM_ac3220536cb8d9c072d19f1fabc069440}} 
+\index{TrainSVM@{TrainSVM}!setPositiveTrainingImagesDirectory@{setPositiveTrainingImagesDirectory}}
+\index{setPositiveTrainingImagesDirectory@{setPositiveTrainingImagesDirectory}!TrainSVM@{TrainSVM}}
+\doxysubsubsection{\texorpdfstring{setPositiveTrainingImagesDirectory()}{setPositiveTrainingImagesDirectory()}}
+{\footnotesize\ttfamily void Train\+S\+V\+M\+::set\+Positive\+Training\+Images\+Directory (\begin{DoxyParamCaption}\item[{std\+::string}]{directory\+Path }\end{DoxyParamCaption})}
+
+
+
+Function sets directory path of positive training images. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em directory\+Path} & of type string \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+none 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+include/Train\+S\+V\+M.\+hpp\end{DoxyCompactItemize}

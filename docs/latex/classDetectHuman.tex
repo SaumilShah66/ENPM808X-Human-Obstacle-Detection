@@ -1,0 +1,174 @@
+\hypertarget{classDetectHuman}{}\doxysection{Detect\+Human Class Reference}
+\label{classDetectHuman}\index{DetectHuman@{DetectHuman}}
+
+
+class \mbox{\hyperlink{classDetectHuman}{Detect\+Human}} The class \mbox{\hyperlink{classDetectHuman}{Detect\+Human}} uses a trained S\+VM model to detect humans in an image and returns the pixel coordinates of the bounding boxes containing humans in an image  
+
+
+
+
+{\ttfamily \#include $<$Detect\+Human.\+hpp$>$}
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classDetectHuman_a20e939b7c8a0c2693032279990685ba3}{Detect\+Human}} ()
+\begin{DoxyCompactList}\small\item\em constructor \mbox{\hyperlink{classDetectHuman}{Detect\+Human}} \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classDetectHuman_a3ae15602ff67e5a05462499483a40060}{Detect\+Human}} (std\+::string classifier\+Filename)
+\begin{DoxyCompactList}\small\item\em constructor \mbox{\hyperlink{classDetectHuman}{Detect\+Human}} \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classDetectHuman_a5790c55a8c185fa76635ded39d24deda}{load\+Model}} (std\+::string file\+Name\+Of\+Trained\+Classifier)
+\begin{DoxyCompactList}\small\item\em Function to load weights of S\+VM model. \end{DoxyCompactList}\item 
+std\+::vector$<$ std\+::vector$<$ int $>$ $>$ \mbox{\hyperlink{classDetectHuman_ab02069e1d48a8ce55d78686c92738148}{find\+Humans}} (cv\+::\+Mat frame)
+\begin{DoxyCompactList}\small\item\em Function to detect humans in an image or a frame of video. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classDetectHuman_abea956c75e5fdb4114bb67b89acd3b4c}{set\+Classifier\+Filename}} (std\+::string filename\+Of\+Classifier)
+\begin{DoxyCompactList}\small\item\em Function gets the filename of classifier from user. \end{DoxyCompactList}\item 
+std\+::string \mbox{\hyperlink{classDetectHuman_a65156f23b022204bda2a8e923fec9257}{get\+Classifier\+Filename}} ()
+\begin{DoxyCompactList}\small\item\em Function returns the classifier filename. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classDetectHuman_a6377cc9bfa2f59bd4b7c0226c0801005}{$\sim$\+Detect\+Human}} ()
+\begin{DoxyCompactList}\small\item\em destructor \mbox{\hyperlink{classDetectHuman}{Detect\+Human}} \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classDetectHuman_a432ed11307f36dead93bffced77f7373}\label{classDetectHuman_a432ed11307f36dead93bffced77f7373}} 
+cv\+::\+Ptr$<$ cv\+::ml\+::\+S\+VM $>$ \mbox{\hyperlink{classDetectHuman_a432ed11307f36dead93bffced77f7373}{classifier\+Model}}
+\begin{DoxyCompactList}\small\item\em Container to store S\+VM classifier model. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+class \mbox{\hyperlink{classDetectHuman}{Detect\+Human}} The class \mbox{\hyperlink{classDetectHuman}{Detect\+Human}} uses a trained S\+VM model to detect humans in an image and returns the pixel coordinates of the bounding boxes containing humans in an image 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classDetectHuman_a20e939b7c8a0c2693032279990685ba3}\label{classDetectHuman_a20e939b7c8a0c2693032279990685ba3}} 
+\index{DetectHuman@{DetectHuman}!DetectHuman@{DetectHuman}}
+\index{DetectHuman@{DetectHuman}!DetectHuman@{DetectHuman}}
+\doxysubsubsection{\texorpdfstring{DetectHuman()}{DetectHuman()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily Detect\+Human\+::\+Detect\+Human (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+constructor \mbox{\hyperlink{classDetectHuman}{Detect\+Human}} 
+
+
+\begin{DoxyParams}{Parameters}
+{\em none} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+none 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classDetectHuman_a3ae15602ff67e5a05462499483a40060}\label{classDetectHuman_a3ae15602ff67e5a05462499483a40060}} 
+\index{DetectHuman@{DetectHuman}!DetectHuman@{DetectHuman}}
+\index{DetectHuman@{DetectHuman}!DetectHuman@{DetectHuman}}
+\doxysubsubsection{\texorpdfstring{DetectHuman()}{DetectHuman()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily Detect\+Human\+::\+Detect\+Human (\begin{DoxyParamCaption}\item[{std\+::string}]{classifier\+Filename }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [explicit]}}
+
+
+
+constructor \mbox{\hyperlink{classDetectHuman}{Detect\+Human}} 
+
+
+\begin{DoxyParams}{Parameters}
+{\em classifier\+Filename} & of type string \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+none 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classDetectHuman_a6377cc9bfa2f59bd4b7c0226c0801005}\label{classDetectHuman_a6377cc9bfa2f59bd4b7c0226c0801005}} 
+\index{DetectHuman@{DetectHuman}!````~DetectHuman@{$\sim$DetectHuman}}
+\index{````~DetectHuman@{$\sim$DetectHuman}!DetectHuman@{DetectHuman}}
+\doxysubsubsection{\texorpdfstring{$\sim$DetectHuman()}{~DetectHuman()}}
+{\footnotesize\ttfamily Detect\+Human\+::$\sim$\+Detect\+Human (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+destructor \mbox{\hyperlink{classDetectHuman}{Detect\+Human}} 
+
+
+\begin{DoxyParams}{Parameters}
+{\em none} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+none 
+\end{DoxyReturn}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classDetectHuman_ab02069e1d48a8ce55d78686c92738148}\label{classDetectHuman_ab02069e1d48a8ce55d78686c92738148}} 
+\index{DetectHuman@{DetectHuman}!findHumans@{findHumans}}
+\index{findHumans@{findHumans}!DetectHuman@{DetectHuman}}
+\doxysubsubsection{\texorpdfstring{findHumans()}{findHumans()}}
+{\footnotesize\ttfamily std\+::vector$<$std\+::vector$<$int$>$ $>$ Detect\+Human\+::find\+Humans (\begin{DoxyParamCaption}\item[{cv\+::\+Mat}]{frame }\end{DoxyParamCaption})}
+
+
+
+Function to detect humans in an image or a frame of video. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em frame} & of type cv\+::\+Mat \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+bounding box values of type std\+::vector$<$std\+::vector$<$int$>$$>$ The following function takes input image and feeds it to S\+VM classifier which provides us the bounding box values of humans detected in image 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classDetectHuman_a65156f23b022204bda2a8e923fec9257}\label{classDetectHuman_a65156f23b022204bda2a8e923fec9257}} 
+\index{DetectHuman@{DetectHuman}!getClassifierFilename@{getClassifierFilename}}
+\index{getClassifierFilename@{getClassifierFilename}!DetectHuman@{DetectHuman}}
+\doxysubsubsection{\texorpdfstring{getClassifierFilename()}{getClassifierFilename()}}
+{\footnotesize\ttfamily std\+::string Detect\+Human\+::get\+Classifier\+Filename (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Function returns the classifier filename. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em none} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+classifier\+Filename of type string 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classDetectHuman_a5790c55a8c185fa76635ded39d24deda}\label{classDetectHuman_a5790c55a8c185fa76635ded39d24deda}} 
+\index{DetectHuman@{DetectHuman}!loadModel@{loadModel}}
+\index{loadModel@{loadModel}!DetectHuman@{DetectHuman}}
+\doxysubsubsection{\texorpdfstring{loadModel()}{loadModel()}}
+{\footnotesize\ttfamily bool Detect\+Human\+::load\+Model (\begin{DoxyParamCaption}\item[{std\+::string}]{file\+Name\+Of\+Trained\+Classifier }\end{DoxyParamCaption})}
+
+
+
+Function to load weights of S\+VM model. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em file\+Name\+Of\+Trained\+Classifier} & of type string \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true if done successfully and false if not The following function loads the value of weights of trained classifier and saves them into classifier\+Model container 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classDetectHuman_abea956c75e5fdb4114bb67b89acd3b4c}\label{classDetectHuman_abea956c75e5fdb4114bb67b89acd3b4c}} 
+\index{DetectHuman@{DetectHuman}!setClassifierFilename@{setClassifierFilename}}
+\index{setClassifierFilename@{setClassifierFilename}!DetectHuman@{DetectHuman}}
+\doxysubsubsection{\texorpdfstring{setClassifierFilename()}{setClassifierFilename()}}
+{\footnotesize\ttfamily void Detect\+Human\+::set\+Classifier\+Filename (\begin{DoxyParamCaption}\item[{std\+::string}]{filename\+Of\+Classifier }\end{DoxyParamCaption})}
+
+
+
+Function gets the filename of classifier from user. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em filename\+Of\+Classifier} & of type string \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+none The following function sets the name of the classifier file 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+include/Detect\+Human.\+hpp\end{DoxyCompactItemize}
