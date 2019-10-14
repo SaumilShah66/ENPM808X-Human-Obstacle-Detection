@@ -60,7 +60,7 @@ class DetectHuman {
    * @param classifierFilename of type string
    * @return none
    */
-  DetectHuman(std::string classifierFilename);
+  explicit DetectHuman(std::string classifierFilename);
 
   /**
    * @brief Function to load weights of SVM model

@@ -53,7 +53,7 @@ class TrainSVM {
    * @param classifierFilename of type string
    * @return none
    */
-  TrainSVM(std::vector<double> parameters);
+  explicit TrainSVM(std::vector<double> parameters);
 
   /**
    * @brief constructor TrainSVM
