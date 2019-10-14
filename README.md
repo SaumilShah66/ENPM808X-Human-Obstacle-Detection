@@ -89,8 +89,8 @@ SOFTWARE.
 
 ## Development process
 
-Agile iterative process is being followed for project. You can find all the logs [here](https://drive.google.com/open?id=1foEYOV_wYh-uo1HzLIA6oWQsRw7hj1JdQwvthF7eQyE). 
-Sprint logs can be found [here](https://docs.google.com/spreadsheets/d/1k3tSFWW1VIWE4VmT8T-9ZNF8kYoYu1GyEclZ9doj5tA/edit?usp=sharing).
+Agile iterative process is being followed for project. The roles were divided into driver, navigator and design keeper, which were shuffled as per tasks. You can find all the logs [here](https://drive.google.com/open?id=1foEYOV_wYh-uo1HzLIA6oWQsRw7hj1JdQwvthF7eQyE). 
+Sprint planning and review notes are [here](https://docs.google.com/document/d/1_KDDPczK_SDg7lbxVabgG5e0FX5Kzq_xEpoSlDGbaSM/edit?usp=sharing).
 
 
 ## Building for code coverage
