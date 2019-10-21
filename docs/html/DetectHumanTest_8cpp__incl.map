@@ -1,0 +1,5 @@
+<map id="test/DetectHumanTest.cpp" name="test/DetectHumanTest.cpp">
+<area shape="rect" id="node4" href="$TrainSVM_8hpp.html" title="TrainSVM Class declaration &#160;Declared functions Class to train SVM using data from class DataLoader..." alt="" coords="481,80,587,107"/>
+<area shape="rect" id="node13" href="$DetectHuman_8hpp.html" title="DetectHuman Class declaration &#160;Declared functions Class to detect humans using an SVM model trained o..." alt="" coords="757,155,885,181"/>
+<area shape="rect" id="node9" href="$DataLoader_8hpp.html" title="DataLoader Class declaration &#160;Declared functions Class to read data from files. " alt="" coords="477,155,591,181"/>
+</map>
