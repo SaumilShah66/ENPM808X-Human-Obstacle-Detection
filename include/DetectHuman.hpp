@@ -24,13 +24,13 @@
 
 /**
  * @file      DetectHuman.hpp
- * @author    Naman Gupta (namangupta98) Driver
- * @author    Saumil Shah (SaumilShah66) Design Keeper
- * @author    Aman Virmani (AmanVirmani) Navigator
+ * @author    Saumil Shah (SaumilShah66) Driver
+ * @author    Naman Gupta (namangupta98) Navigator
+ * @author    Aman Virmani (AmanVirmani) Design Keeper
  * @copyright MIT License
  * @brief     DetectHuman Class declaration
  * @detail    Declared functions Class to detect humans using an SVM model 
- * trained on HOG features
+ *            trained on HOG features
  */
 
 #pragma once
@@ -39,6 +39,7 @@
 #include <vector>
 #include <opencv2/opencv.hpp>
 #include <opencv2/ml.hpp>
+#include <sys/stat.h>
 
 /**
  * @brief class DetectHuman
@@ -48,75 +49,45 @@
  */
 class DetectHuman {
  public:
-  /**
+ /**
    * @brief constructor DetectHuman
    * @param none
    * @return none
    */
   DetectHuman();
-
-  /**
-   * @brief constructor DetectHuman
-   * @param classifierFilename of type string
-   * @return none
-   */
-  explicit DetectHuman(std::string classifierFilename);
-
-  /**
-   * @brief Function to load weights of SVM model
-   * @param fileNameOfTrainedClassifier of type string
-   * @return true if done successfully and false if not
-   * The following function loads the value of weights of trained classifier
-   * and saves them into classifierModel container
-   */
-  bool loadModel(std::string fileNameOfTrainedClassifier);
-
-  /**
-   * @brief Function to detect humans in an image or a frame of video
-   * @param frame of type cv::Mat
-   * @return bounding box values of type std::vector<std::vector<int>>
-   * The following function takes input image and feeds it to SVM classifier
-   * which provides us the bounding box values of humans detected in image
-   */
-  std::vector<std::vector<int>> findHumans(cv::Mat frame);
-
-  /**
-   * @brief Function gets the filename of classifier from user
-   * @param filenameOfClassifier of type string
-   * @return none
-   * The following function sets the name of the classifier file
-   */
-  void setClassifierFilename(std::string filenameOfClassifier);
-
-  /**
-   * @brief Function returns the classifier filename
-   * @param none
-   * @return classifierFilename of type string
-   */
-  std::string getClassifierFilename();
-
-  /**
-   * @brief destructor DetectHuman
-   * @param none
-   * @return none
-   */
-  ~DetectHuman();
-
   /**
    * @brief Container to store SVM classifier model
    */
-  cv::Ptr<cv::ml::SVM> classifierModel;
-
- private:
+  cv::Ptr<cv::ml::SVM> svm = cv::ml::SVM::create();
+  /**
+   * @brief Instance of HOGDescriptor for feature extraction and
+   * detection 
+   */
+  cv::HOGDescriptor hog;
+  /**
+   * @brief Method sets the SVM model provided by OpenCV for Human detcection
+   * @param none
+   * @return none
+   */
+  void setDefaultSVM();
+  /**
+   * @brief Method sets the SVM model trained by TrainSVM class
+   * @param customSVMFile of type string
+   * @return none
+   * Path of custom trained SVM model should be provided to the method
+   * in order to use custom SVM with HOGDescriptor
+   */
+  void setCustomSVM(std::string customSVMFile);
   /**
    * @brief Function checks either the file already exists or not
    * @param fileName of type string
    * @return true if the file already exists and false if does not exist
    */
-  bool fileExist(std::string fileName);
-
-  /**
-   * @brief Container to classifierFilename of type string
+  bool fileExist(const std::string& filename);
+   /**
+   * @brief destructor DetectHuman
+   * @param none
+   * @return none
    */
-  std::string classifierFilename;
+  ~DetectHuman();
 };
