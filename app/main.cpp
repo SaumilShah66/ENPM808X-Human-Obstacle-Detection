@@ -32,7 +32,80 @@
  */
 
 #include <iostream>
+#include <DataLoader.hpp>
+#include <TrainSVM.hpp>
+#include <VisionInput.hpp>
 
 int main() {
+  std::cout << "Do you want train a SVM model (y/n) :";
+  std::string response, media;
+  std::getline(std::cin, response);
+  std::string pd, nd, svmFilename;
+  if (response == "y") {
+    TrainSVM trainer;
+    std::cout
+        << "Please provide path to directory consisting positive images :";
+    std::getline(std::cin, pd);
+    std::cout
+        << "Please provide path to directory consisting negative images :";
+    std::getline(std::cin, nd);
+    std::cout << "Where do you want to save it(provide .xml filename) :";
+    std::getline(std::cin, svmFilename);
+    trainer.setPosDirectory(pd);
+    trainer.setNegDirectory(nd);
+    trainer.startTraining();
+    trainer.saveSVM(svmFilename);
+  } else {
+    std::cout << "Do you want to use default classifier ?(y/n)";
+    std::getline(std::cin, response);
+    int camCode = 0;
+    if (response == "y") {
+      std::cout << "Camera/Videofile/Image ? ";
+      std::getline(std::cin, media);
+      VisionInput vision;
+      vision.setupDetector("0");
+      if (media == "Camera") {
+        std::cout << "Enter camera code (0 for webcam): ";
+        std::cin >> camCode;
+        vision.detectWithCamera(camCode);
+      }
+      if (media == "Videofile") {
+        std::cout << "Enter filename ";
+        std::getline(std::cin, response);
+        vision.detectWithVideoFile(response);
+      }
+      if (media == "Image") {
+        std::cout << "Enter filename ";
+        std::getline(std::cin, response);
+        vision.detectWithImage(response);
+      }
+    } else {
+      std::cout << "Do you want to use custom classifier ?(y/n)";
+      std::getline(std::cin, response);
+      if (response == "y") {
+        std::cout << "Specify path of SVM file : ";
+        std::getline(std::cin, media);
+        std::cout << "Camera/Videofile/Image ? ";
+        std::getline(std::cin, response);
+        VisionInput vision;
+        vision.setupDetector(response);
+        if (media == "Camera") {
+          std::cout << "Enter camera code (0 for webcam): ";
+          std::cin >> camCode;
+          vision.detectWithCamera(camCode);
+        }
+        if (media == "Videofile") {
+          std::cout << "Enter filename ";
+          std::getline(std::cin, response);
+          vision.detectWithVideoFile(response);
+        }
+        if (media == "Image") {
+          std::cout << "Enter filename ";
+          std::getline(std::cin, response);
+          vision.detectWithImage(response);
+        }
+      }
+    }
+  }
   return 0;
 }
