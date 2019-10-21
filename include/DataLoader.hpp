@@ -111,6 +111,13 @@ class DataLoader {
   ~DataLoader();
 
   /**
+   * @brief Gives images names from directory
+   * @param dir of type string
+   * @return container of type std::vector<cv::String>
+   */
+  std::vector<cv::String> give_image_names(std::string dir);
+
+  /**
    * @brief Container for positive directory with initial value as 0 for empty
    * 		directory of type string
    */
