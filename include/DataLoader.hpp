@@ -24,13 +24,12 @@
 
 /**
  * @file      DataLoader.hpp
- * @author    Naman Gupta (namangupta98) Driver
- * @author    Saumil Shah (SaumilShah66) Design Keeper
- * @author    Aman Virmani (AmanVirmani) Navigator
+ * @author    Saumil Shah (SaumilShah66) Driver
+ * @author    Naman Gupta (namangupta98) Navigator
+ * @author    Aman Virmani (AmanVirmani) Design Keeper
  * @copyright MIT License
  * @brief     DataLoader Class declaration
- * @detail    Declared functions Class to read data from files and camera 
- * 			  sensors
+ * @detail    Declared functions Class to read data from files
  */
 #ifndef INCLUDE_DATALOADER_HPP_
 #define INCLUDE_DATALOADER_HPP_
@@ -40,13 +39,18 @@
 #include <opencv2/opencv.hpp>
 
 /**
- * @brief	class DataLoader
- * The class DataLoader captures image/video from camera sensor or files and
- * creates HOG feature for every image.
+ * @brief class DataLoader
+ * The class DataLoader reads data from files for training purposes and creates
+ * HOG feature for every image.
  */
-
 class DataLoader {
  public:
+  /**
+   * @brief Container to store no. of images from a negative image of type int 
+   * 		and value 10
+   */
+  int number_of_images_from_one_negative_image = 10;
+
   /**
    * @brief constructor DataLoader
    * @param none
@@ -55,46 +59,56 @@ class DataLoader {
   DataLoader();
 
   /**
-   * @brief Function to create HOG features
-   * @param inputImage of type cv::Mat
-   * @return HOG feature of type cv::Mat
-   * The following function takes an input image and calculates HOG feature
-   * which is an input of SVM model
+   * @brief Container to store HOG features of type std::vector<cv::Mat>
    */
-  cv::Mat createHOG(cv::Mat inputImage);
+  std::vector<cv::Mat> descriptors;
 
   /**
-   * @brief Function to load images
+   * @brief Container to store binary values for human detected or not as '0' 
+   * 		or '1' respectively of type std::vector<int>
+   */
+  std::vector<int> labels;
+
+  /**
+   * @brief Function to load positive images from image files
    * @param imageName of type string
-   * @return image of type cv::Mat
-   * The following function takes an image name and reads it from disk
+   * @return images of type cv::Mat
+   * The following function loads positive images i.e. images with humans in it
+   * from image files.
    */
-  cv::Mat loadImage(std::string imageName);
+  cv::Mat loadPosImage(std::string imageName);
 
   /**
-   * @brief Function to read data from camera sensor
-   * @param cameraCode of type int
-   * @return image of type cv::Mat
-   * The following function takes image from camera and returns image. Camera
-   * code defines which camera sensor's data you want to read
+   * @brief Function to load negative images from image matrix
+   * @param imageNeg of type cv::Mat
+   * @return images of type cv::Mat
+   * The following function loads negative images i.e. images without humans in
+   * it from image matrix.
    */
-  cv::Mat Camera(int cameraCode);
+  cv::Mat loadNegImage(cv::Mat imageNeg);
 
   /**
-   * @brief Function to load video from a video file
-   * @param videoFileName of type string
-   * @return frames of video of type std::vector<cv::Mat>
-   * The following function parses all the frames from given video file
+   * @brief Function to write image names
+   * @param dir of type string
+   * @return random string of type std::vector<cv::String>
    */
-  std::vector<cv::Mat> loadVideo(std::string videoFileName);
+  std::vector<cv::String> give_image_names(std::string dir);
 
   /**
-   * @brief Function to load all the images from a directory
-   * @param directoryName of type string
-   * @return images of type std::vector<cv::Mat>
-   * The following function returns images from a specific directory
+   * @brief Function to set HOG parameters
+   * @param none
+   * @return none
+   * This function sets the size of parameters used in HOG
    */
-  std::vector<cv::Mat> loadFromDirectory(std::string directoryName);
+  void setupHOG();
+
+  /**
+   * @brief Function to get data for training
+   * @param none
+   * @return none
+   * The function takes data from the directory to train SVM
+   */
+  void get_training_data();
 
   /**
    * @brief destructor DataLoader
@@ -103,24 +117,92 @@ class DataLoader {
    */
   ~DataLoader();
 
+  /**
+   * @brief Container for positive directory with initial value as 0 for empty
+   * 		directory of type string
+   */
+  std::string pos_dir = "0";
+
+  /**
+   * @brief Container for positive directory with initial value as 0 for empty
+   * 		directory of type string
+   */
+  std::string neg_dir = "0";  
+ 
  private:
   /**
-   * @brief Container to store images
+   * @brief Instance of HOG in which HOG feature is created of type 
+   * 		cv::HOGDescriptor
    */
-  cv::Mat frame;
+  cv::HOGDescriptor hog;
+  
+  /**
+   * @brief Container to store colored image of type cv::Mat
+   */
+  cv::Mat image;
 
   /**
-   * @brief Container to store sequence of video frames
+   * @brief Container to store grayscale image of type cv::Mat
    */
-  std::vector<cv::Mat> sequenceOfFrames;
+  cv::Mat gray;
 
   /**
-   * @brief Function to check if a specified directory exists or not
-   * @param directoryName of type string
-   * @return true if directory exists else return false
-   * The following function returns bool value about the directory status
+   * @brief Container to store cropped image of type cv::Mat
    */
-  bool directoryExist(std::string directoryName);
+  cv::Mat crop;
+
+  /**
+   * @brief Instance in which captured video is stored of type cv::VideoCapture
+   */
+  cv::VideoCapture cap;
+
+  /**
+   * @brief Container to store HOG features of an image of type 
+   * 		std::vector<float>
+   */
+  std::vector<float> hog_descriptor;
+  
+  /**
+   * @brief Container to store cell size of kernel feature of HOG of type 
+   * 		cv::Size and value cv::Size(4,4)
+   */
+  cv::Size cellsize = cv::Size(4,4);
+
+  /**
+   * @brief Container to store image size of type cv::Size and value 
+   * 		cv::Size(64,128)
+   */
+  cv::Size rsize = cv::Size(64,128);
+
+  /**
+   * @brief Container to stride of type cv::Size and value cv::Size(8,8)
+   */
+  cv::Size stride = cv::Size(8,8);
+
+  /**
+   * @brief Container to store window size of type cv::Size	and value 
+   * 		cv::Size(64,128)
+   */
+  cv::Size windowSize = cv::Size(64, 128);
+  
+  /**
+   * @brief Function to shuffle data
+   * @param none
+   * @return none
+   * Function shuffles data which is required for training to get better result
+   */
+  void shuffleData();
+
+  /**
+   * @brief Container stores negative region of interest data of type cv::Rect
+   */
+  cv::Rect neg_roi;
+
+  /**
+   * @brief Container stores positive region of interest data of type cv::Rect
+   */
+  cv::Rect pos_roi;
+  
 };
 
 #endif  // INCLUDE_DATALOADER_HPP_
