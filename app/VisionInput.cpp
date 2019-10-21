@@ -35,106 +35,104 @@
 
 #include <VisionInput.hpp>
 
-VisionInput::VisionInput(){
+VisionInput::VisionInput() {
 
 }
 
-void VisionInput::setupDetector(std::string SVMFilename){
-	///Check if file already exist or not
-	if(SVMFilename=="0"){
-		humanDetector.setDefaultSVM();
-	}
-	else if(humanDetector.fileExist(SVMFilename)){
-		humanDetector.setCustomSVM(SVMFilename);
-	}
-	else{
-		std::cout << "File does not exist";
-	}
+void VisionInput::setupDetector(std::string SVMFilename) {
+  /// Check if file already exist or not
+  if (SVMFilename == "0") {
+    humanDetector.setDefaultSVM();
+  } else if (humanDetector.fileExist(SVMFilename)) {
+    humanDetector.setCustomSVM(SVMFilename);
+  } else {
+    std::cout << "File does not exist";
+  }
 }
 
-void VisionInput::detectWithCamera(int cameraCode){
-	image.release();
-	///Setting up Camera object
-	cv::VideoCapture cap(cameraCode); 
- 	if(!cap.isOpened()){
- 		std::cout << "No camera avilable to read";
- 	}
- 	else{
- 	while(1)
-	  {
-	  	cap >> image;
-	  	if (image.empty())
-	  		break;
-	  	///Finding humans
-	    humanDetector.hog.detectMultiScale(image, boundingBoxes, 0, cv::Size(8,8), cv::Size(), 1.05, 2, false);
-	  	///Display image with bounding around humans
-	  	showImageWithBox();
-	  	///Press ESC to exit
-	  	char c=(char)cv::waitKey(25);
-    	if(c==27){
-      		break;
-    	}
-    	
-  	   }
-  	   cap.release();
-  	   cv::destroyAllWindows();
-  	   } 
+void VisionInput::detectWithCamera(int cameraCode) {
+  image.release();
+  /// Setting up Camera object
+  cv::VideoCapture cap(cameraCode);
+  if (!cap.isOpened()) {
+    std::cout << "No camera avilable to read";
+  } else {
+    while (1) {
+      cap >> image;
+      if (image.empty())
+        break;
+      /// Finding humans
+      humanDetector.hog.detectMultiScale(image, boundingBoxes, 0,
+                                         cv::Size(8, 8), cv::Size(), 1.05, 2,
+                                         false);
+      /// Display image with bounding around humans
+      showImageWithBox();
+      /// Press ESC to exit
+      char c = (char) cv::waitKey(25);
+      if (c == 27) {
+        break;
+      }
+
+    }
+    cap.release();
+    cv::destroyAllWindows();
+  }
 }
 
-void VisionInput::detectWithVideoFile(std::string filename){
-	image.release();
-	cv::VideoCapture cap(filename); 
- 	if(!cap.isOpened()){
- 		std::cout << "No video file avilable to read";
- 	}
- 	else{
- 	while(true)
-	  {
-	  	cap >> image;
-	  	if (image.empty())
-	  		break;
-	    humanDetector.hog.detectMultiScale(image, boundingBoxes, 0, cv::Size(8,8), cv::Size(), 1.05, 2, false);
-	  	showImageWithBox();
-	  	char c=(char)cv::waitKey(25);
-    	if(c==27){
-      		break;
-    	}
-    	
-  	   }
-  	   cap.release();
-  	   cv::destroyAllWindows();
-  	   } 
+void VisionInput::detectWithVideoFile(std::string filename) {
+  image.release();
+  cv::VideoCapture cap(filename);
+  if (!cap.isOpened()) {
+    std::cout << "No video file avilable to read";
+  } else {
+    while (true) {
+      cap >> image;
+      if (image.empty())
+        break;
+      humanDetector.hog.detectMultiScale(image, boundingBoxes, 0,
+                                         cv::Size(8, 8), cv::Size(), 1.05, 2,
+                                         false);
+      showImageWithBox();
+      char c = (char) cv::waitKey(25);
+      if (c == 27) {
+        break;
+      }
+
+    }
+    cap.release();
+    cv::destroyAllWindows();
+  }
 }
 
-void VisionInput::detectWithImage(std::string filename){
-	image.release();
-	image = cv::imread(filename);
-	if(!image.empty()){
-		humanDetector.hog.detectMultiScale(image, boundingBoxes, 0, cv::Size(8,8), cv::Size(), 1.05, 2, false);
-	  	showImageWithBox();
-	}
-	else{
-		std::cout << "Image file does not exist";
-	}
+void VisionInput::detectWithImage(std::string filename) {
+  image.release();
+  image = cv::imread(filename);
+  if (!image.empty()) {
+    humanDetector.hog.detectMultiScale(image, boundingBoxes, 0, cv::Size(8, 8),
+                                       cv::Size(), 1.05, 2, false);
+    showImageWithBox();
+  } else {
+    std::cout << "Image file does not exist";
+  }
 }
 
 void VisionInput::showImageWithBox() {
-	///Dimensions of bounding box
-	for(auto& r : boundingBoxes) {
-	    r.x += cvRound(r.width*0.1);
-	    r.width = cvRound(r.width*0.8);
-	    r.y += cvRound(r.height*0.07);
-	    r.height = cvRound(r.height*0.8);
-    }
-    for(auto& r:boundingBoxes) {  
-    	cv::rectangle(image, r.tl(), r.br(), cv::Scalar(0, 255, 0), 2);
- 	}
- 	if(!boundingBoxes.empty()){
- 		std::cout << "Humans detected";
- 	}
- 	cv::imshow("ACME Robotics", image);
+  /// Dimensions of bounding box
+  for (auto& r : boundingBoxes) {
+    r.x += cvRound(r.width * 0.1);
+    r.width = cvRound(r.width * 0.8);
+    r.y += cvRound(r.height * 0.07);
+    r.height = cvRound(r.height * 0.8);
+  }
+  for (auto& r : boundingBoxes) {
+    cv::rectangle(image, r.tl(), r.br(), cv::Scalar(0, 255, 0), 2);
+  }
+  if (!boundingBoxes.empty()) {
+    std::cout << "Humans detected";
+  }
+  /// cv::imshow("ACME Robotics", image);
 }
 
-VisionInput::~VisionInput(){
+VisionInput::~VisionInput() {
 
 }

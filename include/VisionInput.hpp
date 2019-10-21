@@ -32,7 +32,8 @@
  * @detail    Declared functions Class to get data for realtime detection
  */
 
-#pragma once
+#ifndef INCLUDE_VISIONINPUT_HPP_
+#define INCLUDE_VISIONINPUT_HPP_
 
 #include <iostream>
 #include <string>
@@ -62,11 +63,11 @@ class VisionInput {
    * @brief Container to store an image
    */
   cv::Mat image;
-    /**
+  /**
    * @brief Instance created of DetecHuman class for human detection with data fedd
    */
   DetectHuman humanDetector;
-    /**
+  /**
    * @brief Container to store detected human positions in form of pixel coordinates
    */
   std::vector<cv::Rect> boundingBoxes;
@@ -109,7 +110,7 @@ class VisionInput {
    * @return none
    */
   void showImageWithBox();
-    /**
+  /**
    * @brief destructor VisionInput
    * @param none
    * @return none
@@ -124,3 +125,4 @@ class VisionInput {
   bool fileExist(const std::string& filename);
 };
 
+#endif  // INCLUDE_VISIONINPUT_HPP_

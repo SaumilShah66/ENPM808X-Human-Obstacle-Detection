@@ -127,15 +127,15 @@ class DataLoader {
    * @brief Container for positive directory with initial value as 0 for empty
    * 		directory of type string
    */
-  std::string neg_dir = "0";  
- 
+  std::string neg_dir = "0";
+
  private:
   /**
    * @brief Instance of HOG in which HOG feature is created of type 
    * 		cv::HOGDescriptor
    */
   cv::HOGDescriptor hog;
-  
+
   /**
    * @brief Container to store colored image of type cv::Mat
    */
@@ -161,30 +161,30 @@ class DataLoader {
    * 		std::vector<float>
    */
   std::vector<float> hog_descriptor;
-  
+
   /**
    * @brief Container to store cell size of kernel feature of HOG of type 
    * 		cv::Size and value cv::Size(4,4)
    */
-  cv::Size cellsize = cv::Size(4,4);
+  cv::Size cellsize = cv::Size(4, 4);
 
   /**
    * @brief Container to store image size of type cv::Size and value 
    * 		cv::Size(64,128)
    */
-  cv::Size rsize = cv::Size(64,128);
+  cv::Size rsize = cv::Size(64, 128);
 
   /**
    * @brief Container to stride of type cv::Size and value cv::Size(8,8)
    */
-  cv::Size stride = cv::Size(8,8);
+  cv::Size stride = cv::Size(8, 8);
 
   /**
    * @brief Container to store window size of type cv::Size	and value 
    * 		cv::Size(64,128)
    */
   cv::Size windowSize = cv::Size(64, 128);
-  
+
   /**
    * @brief Function to shuffle data
    * @param none
@@ -202,7 +202,7 @@ class DataLoader {
    * @brief Container stores positive region of interest data of type cv::Rect
    */
   cv::Rect pos_roi;
-  
+
 };
 
 #endif  // INCLUDE_DATALOADER_HPP_

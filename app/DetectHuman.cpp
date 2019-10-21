@@ -34,36 +34,33 @@
  */
 #include <DetectHuman.hpp>
 
+DetectHuman::DetectHuman() {
 
-DetectHuman::DetectHuman(){
-	
 }
 
-void DetectHuman::setDefaultSVM(){
-	///Setting default detector
-	hog.setSVMDetector(cv::HOGDescriptor::getDefaultPeopleDetector());
-	std::cout << "Default detector has been set. Ready to use" << std::endl;
+void DetectHuman::setDefaultSVM() {
+  /// Setting default detector
+  hog.setSVMDetector(cv::HOGDescriptor::getDefaultPeopleDetector());
+  std::cout << "Default detector has been set. Ready to use" << std::endl;
 }
 
-void DetectHuman::setCustomSVM(std::string customSVMFile){
-	if(fileExist(customSVMFile)){
-		std::cout << "Loading SVM from " << customSVMFile << std::endl;
-		///getting SVM classifier
-		svm = svm->load(customSVMFile);
-		std::cout << "SVM loaded successfully "<< std::endl;
-		hog.setSVMDetector(svm->getSupportVectors());
-	}
-	else{
-		std::cout << "File does not exixt. Unable to load SVM" << std::endl;
-	}
+void DetectHuman::setCustomSVM(std::string customSVMFile) {
+  if (fileExist(customSVMFile)) {
+    std::cout << "Loading SVM from " << customSVMFile << std::endl;
+    /// getting SVM classifier
+    svm = svm->load(customSVMFile);
+    std::cout << "SVM loaded successfully " << std::endl;
+    hog.setSVMDetector(svm->getSupportVectors());
+  } else {
+    std::cout << "File does not exixt. Unable to load SVM" << std::endl;
+  }
 }
 
-
-bool DetectHuman::fileExist(const std::string& filename){
-	struct stat info;
-	return (stat (filename.c_str(), &info) == 0);
+bool DetectHuman::fileExist(const std::string& filename) {
+  struct stat info;
+  return (stat(filename.c_str(), &info) == 0);
 }
 
-DetectHuman::~DetectHuman(){
-	std::cout << "destroyed detector";
+DetectHuman::~DetectHuman() {
+  std::cout << "destroyed detector";
 }

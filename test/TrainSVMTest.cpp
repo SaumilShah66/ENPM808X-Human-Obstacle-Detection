@@ -32,9 +32,9 @@
  */
 
 #include <gtest/gtest.h>
+#include <stdio.h>
 #include <TrainSVM.hpp>
 #include <opencv2/opencv.hpp>
-#include <stdio.h>
 #include <iostream>
 
 /** 
@@ -43,10 +43,10 @@
  */
 TEST(SVMCheck, ShouldNotTrain) {
   TrainSVM svm_trainer;
-  svm_trainer.setPosDirectory("../test_data/npp"); 
+  svm_trainer.setPosDirectory("../test_data/npp");
   svm_trainer.setNegDirectory("../test_data/nnp");
   svm_trainer.startTraining();
-  std::string path="../test_data/trained"+std::to_string(std::rand())+".xml";
+  std::string path = "../test_data/trained"+std::to_string(std::rand())+".xml";
   svm_trainer.saveSVM(path);
   ASSERT_EQ(svm_trainer.directoryExist(path), 0);
 }
@@ -57,14 +57,14 @@ TEST(SVMCheck, ShouldNotTrain) {
  */
 TEST(SVMCheck, ShouldTrain) {
   TrainSVM svm_trainer;
-  svm_trainer.setPosDirectory("../test_data/np"); 
+  svm_trainer.setPosDirectory("../test_data/np");
   svm_trainer.setNegDirectory("../test_data/nn");
   svm_trainer.startTraining();
-  std::string path="../test_data/trained"+std::to_string(std::rand())+".xml";
+  std::string path = "../test_data/trained"+std::to_string(std::rand())+".xml";
   svm_trainer.saveSVM(path);
   ASSERT_EQ(svm_trainer.directoryExist(path), 1);
-  if( remove( path.c_str() ) == 0 ){
-  	std::cout << path << " deleted\n";
+  if ( remove(path.c_str() ) == 0 ) {
+    std::cout << path << " deleted\n";
   }
 }
 

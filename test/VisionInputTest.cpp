@@ -32,9 +32,9 @@
  */
 
 #include <gtest/gtest.h>
+#include <stdio.h>
 #include <TrainSVM.hpp>
 #include <opencv2/opencv.hpp>
-#include <stdio.h>
 #include <iostream>
 #include <VisionInput.hpp>
 
@@ -43,6 +43,7 @@
  * It checks whether image container of class object is empty or not in order
  * to make sure it is not reading any data as no camera is present
  */
+
 TEST(CameraCheck, NoPresentCameraCheck) {
   VisionInput vision;
   vision.setupDetector("0");

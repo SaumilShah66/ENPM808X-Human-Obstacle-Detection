@@ -32,9 +32,9 @@
  */
 
 #include <gtest/gtest.h>
+#include <stdio.h>
 #include <TrainSVM.hpp>
 #include <opencv2/opencv.hpp>
-#include <stdio.h>
 #include <iostream>
 #include <DetectHuman.hpp>
 

@@ -33,7 +33,9 @@
  *            trained on HOG features
  */
 
-#pragma once
+#ifndef INCLUDE_DETECTHUMAN_HPP_
+#define INCLUDE_DETECTHUMAN_HPP_
+
 #include <iostream>
 #include <string>
 #include <vector>
@@ -49,7 +51,7 @@
  */
 class DetectHuman {
  public:
- /**
+  /**
    * @brief constructor DetectHuman
    * @param none
    * @return none
@@ -84,10 +86,12 @@ class DetectHuman {
    * @return true if the file already exists and false if does not exist
    */
   bool fileExist(const std::string& filename);
-   /**
+  /**
    * @brief destructor DetectHuman
    * @param none
    * @return none
    */
   ~DetectHuman();
 };
+
+#endif  // INCLUDE_DETECTHUMAN_HPP_

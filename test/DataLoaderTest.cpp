@@ -72,9 +72,9 @@ TEST(DataCheck, CheckLabelValues) {
   datatest.pos_dir = "../test_data/np";
   datatest.neg_dir = "../test_data/nn";
   datatest.get_training_data();
-  int sum=0;
-  for(auto& j : datatest.labels){
-  	sum = sum+j;
+  int sum = 0;
+  for (auto& j : datatest.labels) {
+    sum = sum+j;
   }
   ASSERT_EQ(sum, 40);
 }
