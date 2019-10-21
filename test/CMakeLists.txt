@@ -1,11 +1,18 @@
 set(GTEST_SHUFFLE 1)
 
 add_executable(
-    cpp-test
+    detect-test
     main.cpp
-    test.cpp
+    VisionInputTest.cpp
+    ../app/VisionInput.cpp
+    ../app/DataLoader.cpp
+    DataLoaderTest.cpp
+    ../app/DetectHuman.cpp
+    DetectHumanTest.cpp
+    ../app/TrainSVM.cpp
+    TrainSVMTest.cpp
 )
 
-target_include_directories(cpp-test PUBLIC ../vendor/googletest/googletest/include 
-                                           ${CMAKE_SOURCE_DIR}/include)
-target_link_libraries(cpp-test PUBLIC gtest)
+target_include_directories(detect-test PUBLIC ../vendor/googletest/googletest/include 
+                                           ${CMAKE_SOURCE_DIR}/include ${OpenCV_INCLUDE_DIRS})
+target_link_libraries(detect-test PUBLIC gtest ${OpenCV_LIBS})
