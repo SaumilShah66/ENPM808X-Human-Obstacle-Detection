@@ -113,11 +113,11 @@ make
 ```
 With following commands you can run tests and demo of this module.
 ```
-Run tests: ./test/cpp-test
-Run program: ./app/shell-app
+Run tests: ./test/detect-test
+Run program: ./app/detect
 ```
 
-## How to Generate Doxygen Documnetation
+## How to Generate Doxygen Documentation
 
 To install doxygen run the following command:
 ```
