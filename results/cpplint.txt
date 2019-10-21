@@ -1,7 +1,15 @@
-Done processing ./DetectHuman.hpp
-Done processing ./DataLoader.hpp
-Done processing ./TrainSVM.hpp
-Done processing ./TrainSVM.cpp
-Done processing ./DetectHuman.cpp
-Done processing ./main.cpp
-Done processing ./DataLoader.cpp
+Done processing ./app/DataLoader.cpp
+Done processing ./app/DetectHuman.cpp
+Done processing ./app/main.cpp
+Done processing ./app/TrainSVM.cpp
+Done processing ./app/VisionInput.cpp
+Done processing ./include/DataLoader.hpp
+Done processing ./include/DetectHuman.hpp
+Done processing ./include/TrainSVM.hpp
+Done processing ./include/VisionInput.hpp
+Done processing ./test/DataLoaderTest.cpp
+Done processing ./test/DetectHumanTest.cpp
+Done processing ./test/main.cpp
+Done processing ./test/TrainSVMTest.cpp
+Done processing ./test/VisionInputTest.cpp
+Total errors found: 27

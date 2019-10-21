@@ -1,34 +1,20 @@
 Checking app/DataLoader.cpp...
-[include/DataLoader.hpp:123]: (style) Unused private function: 'DataLoader::directoryExist'
-1/6 files checked 24% done
+1/10 files checked 16% done
 Checking app/DetectHuman.cpp...
-[include/DetectHuman.hpp:116]: (style) Unused private function: 'DetectHuman::fileExist'
-2/6 files checked 50% done
+2/10 files checked 24% done
 Checking app/TrainSVM.cpp...
-3/6 files checked 78% done
+3/10 files checked 38% done
+Checking app/VisionInput.cpp...
+4/10 files checked 52% done
 Checking app/main.cpp...
-4/6 files checked 97% done
+5/10 files checked 57% done
+Checking test/DataLoaderTest.cpp...
+6/10 files checked 67% done
+Checking test/DetectHumanTest.cpp...
+7/10 files checked 75% done
+Checking test/TrainSVMTest.cpp...
+8/10 files checked 84% done
+Checking test/VisionInputTest.cpp...
+9/10 files checked 94% done
 Checking test/main.cpp...
-5/6 files checked 99% done
-Checking test/test.cpp...
-6/6 files checked 100% done
-[app/DataLoader.cpp:45]: (style) The function 'Camera' is never used.
-[test/test.cpp:3]: (style) The function 'TEST' is never used.
-[app/DataLoader.cpp:39]: (style) The function 'createHOG' is never used.
-[app/DataLoader.cpp:57]: (style) The function 'directoryExist' is never used.
-[app/DetectHuman.cpp:55]: (style) The function 'fileExist' is never used.
-[app/DetectHuman.cpp:46]: (style) The function 'findHumans' is never used.
-[app/DetectHuman.cpp:52]: (style) The function 'getClassifierFilename' is never used.
-[app/TrainSVM.cpp:62]: (style) The function 'getGroundTruthValuesFilename' is never used.
-[app/TrainSVM.cpp:59]: (style) The function 'getNegativeTrainingImagesDirectory' is never used.
-[app/TrainSVM.cpp:65]: (style) The function 'getParameters' is never used.
-[app/TrainSVM.cpp:56]: (style) The function 'getPositiveTrainingImagesDirectory' is never used.
-[app/DataLoader.cpp:51]: (style) The function 'loadFromDirectory' is never used.
-[app/DataLoader.cpp:42]: (style) The function 'loadImage' is never used.
-[app/DetectHuman.cpp:43]: (style) The function 'loadModel' is never used.
-[app/DataLoader.cpp:48]: (style) The function 'loadVideo' is never used.
-[app/DetectHuman.cpp:49]: (style) The function 'setClassifierFilename' is never used.
-[app/TrainSVM.cpp:53]: (style) The function 'setGroundTruthValuesFilename' is never used.
-[app/TrainSVM.cpp:50]: (style) The function 'setNegativeTrainingImagesDirectory' is never used.
-[app/TrainSVM.cpp:44]: (style) The function 'setParameters' is never used.
-[app/TrainSVM.cpp:47]: (style) The function 'setPositiveTrainingImagesDirectory' is never used.
+10/10 files checked 100% done
