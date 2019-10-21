@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['trainsvm_26',['TrainSVM',['../classTrainSVM.html',1,'']]]
+  ['trainsvm',['TrainSVM',['../classTrainSVM.html',1,'']]]
 ];

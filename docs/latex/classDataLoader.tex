@@ -1,46 +1,65 @@
-\hypertarget{classDataLoader}{}\doxysection{Data\+Loader Class Reference}
-\label{classDataLoader}\index{DataLoader@{DataLoader}}
+\hypertarget{classDataLoader}{}\section{Data\+Loader Class Reference}
+\label{classDataLoader}\index{Data\+Loader@{Data\+Loader}}
 
 
-class \mbox{\hyperlink{classDataLoader}{Data\+Loader}} The class \mbox{\hyperlink{classDataLoader}{Data\+Loader}} captures image/video from camera sensor or files and creates H\+OG feature for every image.  
+class \hyperlink{classDataLoader}{Data\+Loader} The class \hyperlink{classDataLoader}{Data\+Loader} reads data from files for training purposes and creates H\+OG feature for every image.  
 
 
 
 
 {\ttfamily \#include $<$Data\+Loader.\+hpp$>$}
 
-\doxysubsection*{Public Member Functions}
+\subsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\hyperlink{classDataLoader_a1e3bfa6d0116f0ecc8ec4596e35a09f0}{Data\+Loader}} ()
-\begin{DoxyCompactList}\small\item\em constructor \mbox{\hyperlink{classDataLoader}{Data\+Loader}} \end{DoxyCompactList}\item 
-cv\+::\+Mat \mbox{\hyperlink{classDataLoader_ae03c549909bc20eb93556ec880fc0cb3}{create\+H\+OG}} (cv\+::\+Mat input\+Image)
-\begin{DoxyCompactList}\small\item\em Function to create H\+OG features. \end{DoxyCompactList}\item 
-cv\+::\+Mat \mbox{\hyperlink{classDataLoader_a5368b3a970f681058ff7ac92d6d695cb}{load\+Image}} (std\+::string image\+Name)
-\begin{DoxyCompactList}\small\item\em Function to load images. \end{DoxyCompactList}\item 
-cv\+::\+Mat \mbox{\hyperlink{classDataLoader_a3e6681a241f7a439aaea6b3ffdcbc301}{Camera}} (int camera\+Code)
-\begin{DoxyCompactList}\small\item\em Function to read data from camera sensor. \end{DoxyCompactList}\item 
-std\+::vector$<$ cv\+::\+Mat $>$ \mbox{\hyperlink{classDataLoader_afc169b8783dac0eba51db8d9114ee9e7}{load\+Video}} (std\+::string video\+File\+Name)
-\begin{DoxyCompactList}\small\item\em Function to load video from a video file. \end{DoxyCompactList}\item 
-std\+::vector$<$ cv\+::\+Mat $>$ \mbox{\hyperlink{classDataLoader_aa041f12b158eeb0e392052dc4a6c14cc}{load\+From\+Directory}} (std\+::string directory\+Name)
-\begin{DoxyCompactList}\small\item\em Function to load all the images from a directory. \end{DoxyCompactList}\item 
-\mbox{\hyperlink{classDataLoader_a30951bb663d7a5ff79a4443de0f943ed}{$\sim$\+Data\+Loader}} ()
-\begin{DoxyCompactList}\small\item\em destructor \mbox{\hyperlink{classDataLoader}{Data\+Loader}} \end{DoxyCompactList}\end{DoxyCompactItemize}
+\hyperlink{classDataLoader_a1e3bfa6d0116f0ecc8ec4596e35a09f0}{Data\+Loader} ()
+\begin{DoxyCompactList}\small\item\em constructor \hyperlink{classDataLoader}{Data\+Loader} \end{DoxyCompactList}\item 
+cv\+::\+Mat \hyperlink{classDataLoader_aae69b02ceabe6b1d858f3e5dca8d8bbe}{load\+Pos\+Image} (std\+::string image\+Name)
+\begin{DoxyCompactList}\small\item\em Function to load positive images from image files. \end{DoxyCompactList}\item 
+cv\+::\+Mat \hyperlink{classDataLoader_afbd04a134d7e4fc255992f1798f7f5e3}{load\+Neg\+Image} (cv\+::\+Mat image\+Neg)
+\begin{DoxyCompactList}\small\item\em Function to load negative images from image matrix. \end{DoxyCompactList}\item 
+void \hyperlink{classDataLoader_a488826f750baad653d212a8e9db9a170}{setup\+H\+OG} ()
+\begin{DoxyCompactList}\small\item\em Function to set H\+OG parameters. \end{DoxyCompactList}\item 
+void \hyperlink{classDataLoader_a200d198bc79dac47bf11020628500c0d}{get\+\_\+training\+\_\+data} ()
+\begin{DoxyCompactList}\small\item\em Function to get data for training. \end{DoxyCompactList}\item 
+\hyperlink{classDataLoader_a30951bb663d7a5ff79a4443de0f943ed}{$\sim$\+Data\+Loader} ()
+\begin{DoxyCompactList}\small\item\em destructor \hyperlink{classDataLoader}{Data\+Loader} \end{DoxyCompactList}\item 
+std\+::vector$<$ cv\+::\+String $>$ \hyperlink{classDataLoader_a5f7a483276b576f2b3d4f635a2c10df9}{give\+\_\+image\+\_\+names} (std\+::string dir)
+\begin{DoxyCompactList}\small\item\em Gives images names from directory. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+int \hyperlink{classDataLoader_ae66f042476b4bb478937bb273716685b}{number\+\_\+of\+\_\+images\+\_\+from\+\_\+one\+\_\+negative\+\_\+image} = 10\hypertarget{classDataLoader_ae66f042476b4bb478937bb273716685b}{}\label{classDataLoader_ae66f042476b4bb478937bb273716685b}
+
+\begin{DoxyCompactList}\small\item\em Container to store no. of images from a negative image of type int and value 10. \end{DoxyCompactList}\item 
+std\+::vector$<$ cv\+::\+Mat $>$ \hyperlink{classDataLoader_abbf7358e729896c157169ba82aeb3d76}{descriptors}\hypertarget{classDataLoader_abbf7358e729896c157169ba82aeb3d76}{}\label{classDataLoader_abbf7358e729896c157169ba82aeb3d76}
+
+\begin{DoxyCompactList}\small\item\em Container to store H\+OG features of type std\+::vector$<$cv\+::\+Mat$>$ \end{DoxyCompactList}\item 
+std\+::vector$<$ int $>$ \hyperlink{classDataLoader_ae6c7b365e2318594bbe07be03e38f1d6}{labels}\hypertarget{classDataLoader_ae6c7b365e2318594bbe07be03e38f1d6}{}\label{classDataLoader_ae6c7b365e2318594bbe07be03e38f1d6}
+
+\begin{DoxyCompactList}\small\item\em Container to store binary values for human detected or not as \textquotesingle{}0\textquotesingle{} or \textquotesingle{}1\textquotesingle{} respectively of type std\+::vector$<$int$>$ \end{DoxyCompactList}\item 
+std\+::string \hyperlink{classDataLoader_ad431b1dfd8eb640e3f6922a77960c892}{pos\+\_\+dir} = \char`\"{}0\char`\"{}\hypertarget{classDataLoader_ad431b1dfd8eb640e3f6922a77960c892}{}\label{classDataLoader_ad431b1dfd8eb640e3f6922a77960c892}
+
+\begin{DoxyCompactList}\small\item\em Container for positive directory with initial value as 0 for empty directory of type string. \end{DoxyCompactList}\item 
+std\+::string \hyperlink{classDataLoader_adf2a0a3e76c068324801194fb1411477}{neg\+\_\+dir} = \char`\"{}0\char`\"{}\hypertarget{classDataLoader_adf2a0a3e76c068324801194fb1411477}{}\label{classDataLoader_adf2a0a3e76c068324801194fb1411477}
+
+\begin{DoxyCompactList}\small\item\em Container for positive directory with initial value as 0 for empty directory of type string. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
-\doxysubsection{Detailed Description}
-class \mbox{\hyperlink{classDataLoader}{Data\+Loader}} The class \mbox{\hyperlink{classDataLoader}{Data\+Loader}} captures image/video from camera sensor or files and creates H\+OG feature for every image. 
+\subsection{Detailed Description}
+class \hyperlink{classDataLoader}{Data\+Loader} The class \hyperlink{classDataLoader}{Data\+Loader} reads data from files for training purposes and creates H\+OG feature for every image. 
 
-\doxysubsection{Constructor \& Destructor Documentation}
-\mbox{\Hypertarget{classDataLoader_a1e3bfa6d0116f0ecc8ec4596e35a09f0}\label{classDataLoader_a1e3bfa6d0116f0ecc8ec4596e35a09f0}} 
-\index{DataLoader@{DataLoader}!DataLoader@{DataLoader}}
-\index{DataLoader@{DataLoader}!DataLoader@{DataLoader}}
-\doxysubsubsection{\texorpdfstring{DataLoader()}{DataLoader()}}
-{\footnotesize\ttfamily Data\+Loader\+::\+Data\+Loader (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+\subsection{Constructor \& Destructor Documentation}
+\index{Data\+Loader@{Data\+Loader}!Data\+Loader@{Data\+Loader}}
+\index{Data\+Loader@{Data\+Loader}!Data\+Loader@{Data\+Loader}}
+\subsubsection[{\texorpdfstring{Data\+Loader()}{DataLoader()}}]{\setlength{\rightskip}{0pt plus 5cm}Data\+Loader\+::\+Data\+Loader (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{classDataLoader_a1e3bfa6d0116f0ecc8ec4596e35a09f0}{}\label{classDataLoader_a1e3bfa6d0116f0ecc8ec4596e35a09f0}
 
 
-
-constructor \mbox{\hyperlink{classDataLoader}{Data\+Loader}} 
+constructor \hyperlink{classDataLoader}{Data\+Loader} 
 
 
 \begin{DoxyParams}{Parameters}
@@ -50,15 +69,16 @@ constructor \mbox{\hyperlink{classDataLoader}{Data\+Loader}}
 \begin{DoxyReturn}{Returns}
 none 
 \end{DoxyReturn}
-\mbox{\Hypertarget{classDataLoader_a30951bb663d7a5ff79a4443de0f943ed}\label{classDataLoader_a30951bb663d7a5ff79a4443de0f943ed}} 
-\index{DataLoader@{DataLoader}!````~DataLoader@{$\sim$DataLoader}}
-\index{````~DataLoader@{$\sim$DataLoader}!DataLoader@{DataLoader}}
-\doxysubsubsection{\texorpdfstring{$\sim$DataLoader()}{~DataLoader()}}
-{\footnotesize\ttfamily Data\+Loader\+::$\sim$\+Data\+Loader (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+initialise R\+O\+I(\+Region of Interest) coordinates for training data \index{Data\+Loader@{Data\+Loader}!````~Data\+Loader@{$\sim$\+Data\+Loader}}
+\index{````~Data\+Loader@{$\sim$\+Data\+Loader}!Data\+Loader@{Data\+Loader}}
+\subsubsection[{\texorpdfstring{$\sim$\+Data\+Loader()}{~DataLoader()}}]{\setlength{\rightskip}{0pt plus 5cm}Data\+Loader\+::$\sim$\+Data\+Loader (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{classDataLoader_a30951bb663d7a5ff79a4443de0f943ed}{}\label{classDataLoader_a30951bb663d7a5ff79a4443de0f943ed}
 
 
-
-destructor \mbox{\hyperlink{classDataLoader}{Data\+Loader}} 
+destructor \hyperlink{classDataLoader}{Data\+Loader} 
 
 
 \begin{DoxyParams}{Parameters}
@@ -70,70 +90,76 @@ none
 \end{DoxyReturn}
 
 
-\doxysubsection{Member Function Documentation}
-\mbox{\Hypertarget{classDataLoader_a3e6681a241f7a439aaea6b3ffdcbc301}\label{classDataLoader_a3e6681a241f7a439aaea6b3ffdcbc301}} 
-\index{DataLoader@{DataLoader}!Camera@{Camera}}
-\index{Camera@{Camera}!DataLoader@{DataLoader}}
-\doxysubsubsection{\texorpdfstring{Camera()}{Camera()}}
-{\footnotesize\ttfamily cv\+::\+Mat Data\+Loader\+::\+Camera (\begin{DoxyParamCaption}\item[{int}]{camera\+Code }\end{DoxyParamCaption})}
+\subsection{Member Function Documentation}
+\index{Data\+Loader@{Data\+Loader}!get\+\_\+training\+\_\+data@{get\+\_\+training\+\_\+data}}
+\index{get\+\_\+training\+\_\+data@{get\+\_\+training\+\_\+data}!Data\+Loader@{Data\+Loader}}
+\subsubsection[{\texorpdfstring{get\+\_\+training\+\_\+data()}{get_training_data()}}]{\setlength{\rightskip}{0pt plus 5cm}void Data\+Loader\+::get\+\_\+training\+\_\+data (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{classDataLoader_a200d198bc79dac47bf11020628500c0d}{}\label{classDataLoader_a200d198bc79dac47bf11020628500c0d}
 
 
-
-Function to read data from camera sensor. 
-
-
-\begin{DoxyParams}{Parameters}
-{\em camera\+Code} & of type int \\
-\hline
-\end{DoxyParams}
-\begin{DoxyReturn}{Returns}
-image of type cv\+::\+Mat The following function takes image from camera and returns image. Camera code defines which camera sensor\textquotesingle{}s data you want to read 
-\end{DoxyReturn}
-\mbox{\Hypertarget{classDataLoader_ae03c549909bc20eb93556ec880fc0cb3}\label{classDataLoader_ae03c549909bc20eb93556ec880fc0cb3}} 
-\index{DataLoader@{DataLoader}!createHOG@{createHOG}}
-\index{createHOG@{createHOG}!DataLoader@{DataLoader}}
-\doxysubsubsection{\texorpdfstring{createHOG()}{createHOG()}}
-{\footnotesize\ttfamily cv\+::\+Mat Data\+Loader\+::create\+H\+OG (\begin{DoxyParamCaption}\item[{cv\+::\+Mat}]{input\+Image }\end{DoxyParamCaption})}
-
-
-
-Function to create H\+OG features. 
+Function to get data for training. 
 
 
 \begin{DoxyParams}{Parameters}
-{\em input\+Image} & of type cv\+::\+Mat \\
+{\em none} & \\
 \hline
 \end{DoxyParams}
 \begin{DoxyReturn}{Returns}
-H\+OG feature of type cv\+::\+Mat The following function takes an input image and calculates H\+OG feature which is an input of S\+VM model 
+none The function takes data from the directory to train S\+VM 
 \end{DoxyReturn}
-\mbox{\Hypertarget{classDataLoader_aa041f12b158eeb0e392052dc4a6c14cc}\label{classDataLoader_aa041f12b158eeb0e392052dc4a6c14cc}} 
-\index{DataLoader@{DataLoader}!loadFromDirectory@{loadFromDirectory}}
-\index{loadFromDirectory@{loadFromDirectory}!DataLoader@{DataLoader}}
-\doxysubsubsection{\texorpdfstring{loadFromDirectory()}{loadFromDirectory()}}
-{\footnotesize\ttfamily std\+::vector$<$cv\+::\+Mat$>$ Data\+Loader\+::load\+From\+Directory (\begin{DoxyParamCaption}\item[{std\+::string}]{directory\+Name }\end{DoxyParamCaption})}
+\index{Data\+Loader@{Data\+Loader}!give\+\_\+image\+\_\+names@{give\+\_\+image\+\_\+names}}
+\index{give\+\_\+image\+\_\+names@{give\+\_\+image\+\_\+names}!Data\+Loader@{Data\+Loader}}
+\subsubsection[{\texorpdfstring{give\+\_\+image\+\_\+names(std\+::string dir)}{give_image_names(std::string dir)}}]{\setlength{\rightskip}{0pt plus 5cm}std\+::vector$<$ cv\+::\+String $>$ Data\+Loader\+::give\+\_\+image\+\_\+names (
+\begin{DoxyParamCaption}
+\item[{std\+::string}]{dir}
+\end{DoxyParamCaption}
+)}\hypertarget{classDataLoader_a5f7a483276b576f2b3d4f635a2c10df9}{}\label{classDataLoader_a5f7a483276b576f2b3d4f635a2c10df9}
 
 
-
-Function to load all the images from a directory. 
+Gives images names from directory. 
 
 
 \begin{DoxyParams}{Parameters}
-{\em directory\+Name} & of type string \\
+{\em dir} & of type string \\
 \hline
 \end{DoxyParams}
 \begin{DoxyReturn}{Returns}
-images of type std\+::vector$<$cv\+::\+Mat$>$ The following function returns images from a specific directory 
+container of type std\+::vector$<$cv\+::\+String$>$ 
 \end{DoxyReturn}
-\mbox{\Hypertarget{classDataLoader_a5368b3a970f681058ff7ac92d6d695cb}\label{classDataLoader_a5368b3a970f681058ff7ac92d6d695cb}} 
-\index{DataLoader@{DataLoader}!loadImage@{loadImage}}
-\index{loadImage@{loadImage}!DataLoader@{DataLoader}}
-\doxysubsubsection{\texorpdfstring{loadImage()}{loadImage()}}
-{\footnotesize\ttfamily cv\+::\+Mat Data\+Loader\+::load\+Image (\begin{DoxyParamCaption}\item[{std\+::string}]{image\+Name }\end{DoxyParamCaption})}
+\index{Data\+Loader@{Data\+Loader}!load\+Neg\+Image@{load\+Neg\+Image}}
+\index{load\+Neg\+Image@{load\+Neg\+Image}!Data\+Loader@{Data\+Loader}}
+\subsubsection[{\texorpdfstring{load\+Neg\+Image(cv\+::\+Mat image\+Neg)}{loadNegImage(cv::Mat imageNeg)}}]{\setlength{\rightskip}{0pt plus 5cm}cv\+::\+Mat Data\+Loader\+::load\+Neg\+Image (
+\begin{DoxyParamCaption}
+\item[{cv\+::\+Mat}]{image\+Neg}
+\end{DoxyParamCaption}
+)}\hypertarget{classDataLoader_afbd04a134d7e4fc255992f1798f7f5e3}{}\label{classDataLoader_afbd04a134d7e4fc255992f1798f7f5e3}
 
 
+Function to load negative images from image matrix. 
 
-Function to load images. 
+
+\begin{DoxyParams}{Parameters}
+{\em image\+Neg} & of type cv\+::\+Mat \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+images of type cv\+::\+Mat The following function loads negative images i.\+e. images without humans in it from image matrix. 
+\end{DoxyReturn}
+randomly choosing R\+OI on neg images
+
+converting B\+GR images to grayscale images to calculate H\+OG features \index{Data\+Loader@{Data\+Loader}!load\+Pos\+Image@{load\+Pos\+Image}}
+\index{load\+Pos\+Image@{load\+Pos\+Image}!Data\+Loader@{Data\+Loader}}
+\subsubsection[{\texorpdfstring{load\+Pos\+Image(std\+::string image\+Name)}{loadPosImage(std::string imageName)}}]{\setlength{\rightskip}{0pt plus 5cm}cv\+::\+Mat Data\+Loader\+::load\+Pos\+Image (
+\begin{DoxyParamCaption}
+\item[{std\+::string}]{image\+Name}
+\end{DoxyParamCaption}
+)}\hypertarget{classDataLoader_aae69b02ceabe6b1d858f3e5dca8d8bbe}{}\label{classDataLoader_aae69b02ceabe6b1d858f3e5dca8d8bbe}
+
+
+Function to load positive images from image files. 
 
 
 \begin{DoxyParams}{Parameters}
@@ -141,28 +167,30 @@ Function to load images.
 \hline
 \end{DoxyParams}
 \begin{DoxyReturn}{Returns}
-image of type cv\+::\+Mat The following function takes an image name and reads it from disk 
+images of type cv\+::\+Mat The following function loads positive images i.\+e. images with humans in it from image files. 
 \end{DoxyReturn}
-\mbox{\Hypertarget{classDataLoader_afc169b8783dac0eba51db8d9114ee9e7}\label{classDataLoader_afc169b8783dac0eba51db8d9114ee9e7}} 
-\index{DataLoader@{DataLoader}!loadVideo@{loadVideo}}
-\index{loadVideo@{loadVideo}!DataLoader@{DataLoader}}
-\doxysubsubsection{\texorpdfstring{loadVideo()}{loadVideo()}}
-{\footnotesize\ttfamily std\+::vector$<$cv\+::\+Mat$>$ Data\+Loader\+::load\+Video (\begin{DoxyParamCaption}\item[{std\+::string}]{video\+File\+Name }\end{DoxyParamCaption})}
+cv\+::imshow(\char`\"{}\+Have a look\char`\"{}, crop); \index{Data\+Loader@{Data\+Loader}!setup\+H\+OG@{setup\+H\+OG}}
+\index{setup\+H\+OG@{setup\+H\+OG}!Data\+Loader@{Data\+Loader}}
+\subsubsection[{\texorpdfstring{setup\+H\+O\+G()}{setupHOG()}}]{\setlength{\rightskip}{0pt plus 5cm}void Data\+Loader\+::setup\+H\+OG (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{classDataLoader_a488826f750baad653d212a8e9db9a170}{}\label{classDataLoader_a488826f750baad653d212a8e9db9a170}
 
 
-
-Function to load video from a video file. 
+Function to set H\+OG parameters. 
 
 
 \begin{DoxyParams}{Parameters}
-{\em video\+File\+Name} & of type string \\
+{\em none} & \\
 \hline
 \end{DoxyParams}
 \begin{DoxyReturn}{Returns}
-frames of video of type std\+::vector$<$cv\+::\+Mat$>$ The following function parses all the frames from given video file 
+none This function sets the size of parameters used in H\+OG 
 \end{DoxyReturn}
 
 
-The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
 \item 
-include/Data\+Loader.\+hpp\end{DoxyCompactItemize}
+include/\hyperlink{DataLoader_8hpp}{Data\+Loader.\+hpp}\item 
+app/\hyperlink{DataLoader_8cpp}{Data\+Loader.\+cpp}\end{DoxyCompactItemize}

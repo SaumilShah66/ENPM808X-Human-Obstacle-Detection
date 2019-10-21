@@ -1,6 +1,5 @@
 var searchData=
 [
-  ['_7edataloader_21',['~DataLoader',['../classDataLoader.html#a30951bb663d7a5ff79a4443de0f943ed',1,'DataLoader']]],
-  ['_7edetecthuman_22',['~DetectHuman',['../classDetectHuman.html#a6377cc9bfa2f59bd4b7c0226c0801005',1,'DetectHuman']]],
-  ['_7etrainsvm_23',['~TrainSVM',['../classTrainSVM.html#acd68b7bd056d7497feb97185b6c59f76',1,'TrainSVM']]]
+  ['neg_5fdir',['neg_dir',['../classDataLoader.html#adf2a0a3e76c068324801194fb1411477',1,'DataLoader']]],
+  ['number_5fof_5fimages_5ffrom_5fone_5fnegative_5fimage',['number_of_images_from_one_negative_image',['../classDataLoader.html#ae66f042476b4bb478937bb273716685b',1,'DataLoader']]]
 ];

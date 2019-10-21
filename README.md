@@ -53,9 +53,19 @@ Repeat.
 * OpenCV library (new BSD License)
 * Math library (new BSD License)
 
+## Demo
+
+Please find the [video](https://www.youtube.com/watch?v=t2idBJXhHqs&feature=youtu.be) output with laptop camera. You can find the custom model trained for this project[ here](https://www.google.com/url?q=https://drive.google.com/open?id%3D1YKDUgwVauBunOPjzoQhLUIDXRk1Q-bln&sa=D&source=hangouts&ust=1571767446052000&usg=AFQjCNHlb9z8qhSsZyITvRtQsEA7TlofgQ) 
+
+[![IMAGE ALT TEXT HERE](https://img.youtube.com/vi/t2idBJXhHqs/0.jpg)](https://www.youtube.com/watch?v=t2idBJXhHqs&feature=youtu.be)
+
+## Known Issues and Bugs
+The positive train Images must of the size 96X160 with human being at center of the image. Code will crash for image size less than that.  
+We plan to fix this bug in next version.
+
 ## Dependencies
 
-Install OpenCV 3.3.0 and other dependencies using the following commands
+Install OpenCV 3.3.0 and other dependencies using the following commands. For further information, refer [here](https://www.learnopencv.com/install-opencv-3-4-4-on-ubuntu-16-04/)
 
 ```
 source ./dependencies.sh

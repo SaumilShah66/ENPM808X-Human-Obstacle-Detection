@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['classifiermodel_50',['classifierModel',['../classDetectHuman.html#a432ed11307f36dead93bffced77f7373',1,'DetectHuman']]]
+  ['boundingboxes',['boundingBoxes',['../classVisionInput.html#af46eecf1faba0b375ce0acbbc4605043',1,'VisionInput']]]
 ];

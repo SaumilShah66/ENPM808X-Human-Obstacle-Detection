@@ -1,0 +1,54 @@
+\hypertarget{VisionInputTest_8cpp}{}\section{test/\+Vision\+Input\+Test.cpp File Reference}
+\label{VisionInputTest_8cpp}\index{test/\+Vision\+Input\+Test.\+cpp@{test/\+Vision\+Input\+Test.\+cpp}}
+
+
+Test cases for \hyperlink{classVisionInput}{Vision\+Input} class methods.  
+
+
+{\ttfamily \#include $<$gtest/gtest.\+h$>$}\\*
+{\ttfamily \#include $<$stdio.\+h$>$}\\*
+{\ttfamily \#include $<$Train\+S\+V\+M.\+hpp$>$}\\*
+{\ttfamily \#include $<$opencv2/opencv.\+hpp$>$}\\*
+{\ttfamily \#include $<$iostream$>$}\\*
+{\ttfamily \#include $<$Vision\+Input.\+hpp$>$}\\*
+Include dependency graph for Vision\+Input\+Test.\+cpp\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{VisionInputTest_8cpp__incl}
+\end{center}
+\end{figure}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{VisionInputTest_8cpp_ae3df2e09352021c28a4f0ac7e644357a}{T\+E\+ST} (Camera\+Check, No\+Present\+Camera\+Check)\hypertarget{VisionInputTest_8cpp_ae3df2e09352021c28a4f0ac7e644357a}{}\label{VisionInputTest_8cpp_ae3df2e09352021c28a4f0ac7e644357a}
+
+\begin{DoxyCompactList}\small\item\em Test for camera sensor read when no camera is present It checks whether image container of class object is empty or not in order to make sure it is not reading any data as no camera is present. \end{DoxyCompactList}\item 
+\hyperlink{VisionInputTest_8cpp_a324a9d79633517a48e3722ad7f6f1ed2}{T\+E\+ST} (Video\+File\+Check, Should\+Read\+Frames)\hypertarget{VisionInputTest_8cpp_a324a9d79633517a48e3722ad7f6f1ed2}{}\label{VisionInputTest_8cpp_a324a9d79633517a48e3722ad7f6f1ed2}
+
+\begin{DoxyCompactList}\small\item\em Test for checking video file read It checks whether \hyperlink{classVisionInput}{Vision\+Input} class is able to parse frames from specified video file. \end{DoxyCompactList}\item 
+\hyperlink{VisionInputTest_8cpp_a49bba036c4226a2652b63206b74f5621}{T\+E\+ST} (Video\+File\+Check, No\+Video\+File)\hypertarget{VisionInputTest_8cpp_a49bba036c4226a2652b63206b74f5621}{}\label{VisionInputTest_8cpp_a49bba036c4226a2652b63206b74f5621}
+
+\begin{DoxyCompactList}\small\item\em Test for checking empty video file read Program should not crash if non existing files are passed to read. \end{DoxyCompactList}\item 
+\hyperlink{VisionInputTest_8cpp_a778c96651540193802d5ce6879809b08}{T\+E\+ST} (Image\+File\+Check, Image\+Read\+Successfully)\hypertarget{VisionInputTest_8cpp_a778c96651540193802d5ce6879809b08}{}\label{VisionInputTest_8cpp_a778c96651540193802d5ce6879809b08}
+
+\begin{DoxyCompactList}\small\item\em Test for reading image from file Checksif object is able to read imagefile succesfully. \end{DoxyCompactList}\item 
+\hyperlink{VisionInputTest_8cpp_ae1b7acc1c4a20953856285c188172651}{T\+E\+ST} (Image\+File\+Check, Non\+Existing\+File)\hypertarget{VisionInputTest_8cpp_ae1b7acc1c4a20953856285c188172651}{}\label{VisionInputTest_8cpp_ae1b7acc1c4a20953856285c188172651}
+
+\begin{DoxyCompactList}\small\item\em Test for reading image from non existing file Programe should not crash if file is not available. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Test cases for \hyperlink{classVisionInput}{Vision\+Input} class methods. 
+
+\begin{DoxyAuthor}{Author}
+Saumil Shah (Saumil\+Shah66) Driver 
+
+Naman Gupta (namangupta98) Navigator 
+
+Aman Virmani (Aman\+Virmani) Design Keeper 
+\end{DoxyAuthor}
+\begin{DoxyCopyright}{Copyright}
+M\+IT License 
+\end{DoxyCopyright}

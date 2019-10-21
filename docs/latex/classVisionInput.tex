@@ -1,0 +1,206 @@
+\hypertarget{classVisionInput}{}\section{Vision\+Input Class Reference}
+\label{classVisionInput}\index{Vision\+Input@{Vision\+Input}}
+
+
+class \hyperlink{classVisionInput}{Vision\+Input} The class \hyperlink{classVisionInput}{Vision\+Input} gives different functionalities to use H\+OG feature based Human detection, so that it can be used with live videos from camera sensor or saved videos and image files.  
+
+
+
+
+{\ttfamily \#include $<$Vision\+Input.\+hpp$>$}
+
+
+
+Collaboration diagram for Vision\+Input\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=189pt]{classVisionInput__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classVisionInput_aaea2418176f6766cfd7ae09f333d176a}{Vision\+Input} ()
+\begin{DoxyCompactList}\small\item\em constructor \hyperlink{classVisionInput}{Vision\+Input} \end{DoxyCompactList}\item 
+void \hyperlink{classVisionInput_a54caed2ca4579dbbf274b2730bf11a01}{detect\+With\+Camera} (int camera\+Code)
+\begin{DoxyCompactList}\small\item\em This method starts human detection from specified camera feed. \end{DoxyCompactList}\item 
+void \hyperlink{classVisionInput_a37b18210c09b26d1fb0cddf930882857}{detect\+With\+Video\+File} (std\+::string filename)
+\begin{DoxyCompactList}\small\item\em This method starts human detection from specified video file. \end{DoxyCompactList}\item 
+void \hyperlink{classVisionInput_a6e00b038651a43978a351c3a54d27005}{detect\+With\+Image} (std\+::string filename)
+\begin{DoxyCompactList}\small\item\em This method starts human detection from specified image file. \end{DoxyCompactList}\item 
+void \hyperlink{classVisionInput_ad7e80a1b7ee9f63cb56ee0b6a1e96351}{setup\+Detector} (std\+::string S\+V\+M\+Filename)
+\begin{DoxyCompactList}\small\item\em This method sets which S\+VM model will be used for detection. \end{DoxyCompactList}\item 
+void \hyperlink{classVisionInput_ac76ded14c04baccb34d8cc3277258f68}{show\+Image\+With\+Box} ()
+\begin{DoxyCompactList}\small\item\em This method creates bounding boxes around detected humans. \end{DoxyCompactList}\item 
+\hyperlink{classVisionInput_ab7800dddb115d9ba6da676b496b03259}{$\sim$\+Vision\+Input} ()
+\begin{DoxyCompactList}\small\item\em destructor \hyperlink{classVisionInput}{Vision\+Input} \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+cv\+::\+Mat \hyperlink{classVisionInput_a70fb6d723dd13355981e263f11b798ab}{image}\hypertarget{classVisionInput_a70fb6d723dd13355981e263f11b798ab}{}\label{classVisionInput_a70fb6d723dd13355981e263f11b798ab}
+
+\begin{DoxyCompactList}\small\item\em Container to store an image. \end{DoxyCompactList}\item 
+\hyperlink{classDetectHuman}{Detect\+Human} \hyperlink{classVisionInput_a9888dff84fef69e454dbd2a38735d2da}{human\+Detector}\hypertarget{classVisionInput_a9888dff84fef69e454dbd2a38735d2da}{}\label{classVisionInput_a9888dff84fef69e454dbd2a38735d2da}
+
+\begin{DoxyCompactList}\small\item\em Instance created of Detec\+Human class for human detection with data fedd. \end{DoxyCompactList}\item 
+std\+::vector$<$ cv\+::\+Rect $>$ \hyperlink{classVisionInput_af46eecf1faba0b375ce0acbbc4605043}{bounding\+Boxes}\hypertarget{classVisionInput_af46eecf1faba0b375ce0acbbc4605043}{}\label{classVisionInput_af46eecf1faba0b375ce0acbbc4605043}
+
+\begin{DoxyCompactList}\small\item\em Container to store detected human positions in form of pixel coordinates. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+class \hyperlink{classVisionInput}{Vision\+Input} The class \hyperlink{classVisionInput}{Vision\+Input} gives different functionalities to use H\+OG feature based Human detection, so that it can be used with live videos from camera sensor or saved videos and image files. 
+
+\subsection{Constructor \& Destructor Documentation}
+\index{Vision\+Input@{Vision\+Input}!Vision\+Input@{Vision\+Input}}
+\index{Vision\+Input@{Vision\+Input}!Vision\+Input@{Vision\+Input}}
+\subsubsection[{\texorpdfstring{Vision\+Input()}{VisionInput()}}]{\setlength{\rightskip}{0pt plus 5cm}Vision\+Input\+::\+Vision\+Input (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{classVisionInput_aaea2418176f6766cfd7ae09f333d176a}{}\label{classVisionInput_aaea2418176f6766cfd7ae09f333d176a}
+
+
+constructor \hyperlink{classVisionInput}{Vision\+Input} 
+
+
+\begin{DoxyParams}{Parameters}
+{\em none} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+none 
+\end{DoxyReturn}
+\index{Vision\+Input@{Vision\+Input}!````~Vision\+Input@{$\sim$\+Vision\+Input}}
+\index{````~Vision\+Input@{$\sim$\+Vision\+Input}!Vision\+Input@{Vision\+Input}}
+\subsubsection[{\texorpdfstring{$\sim$\+Vision\+Input()}{~VisionInput()}}]{\setlength{\rightskip}{0pt plus 5cm}Vision\+Input\+::$\sim$\+Vision\+Input (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{classVisionInput_ab7800dddb115d9ba6da676b496b03259}{}\label{classVisionInput_ab7800dddb115d9ba6da676b496b03259}
+
+
+destructor \hyperlink{classVisionInput}{Vision\+Input} 
+
+
+\begin{DoxyParams}{Parameters}
+{\em none} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+none 
+\end{DoxyReturn}
+
+
+\subsection{Member Function Documentation}
+\index{Vision\+Input@{Vision\+Input}!detect\+With\+Camera@{detect\+With\+Camera}}
+\index{detect\+With\+Camera@{detect\+With\+Camera}!Vision\+Input@{Vision\+Input}}
+\subsubsection[{\texorpdfstring{detect\+With\+Camera(int camera\+Code)}{detectWithCamera(int cameraCode)}}]{\setlength{\rightskip}{0pt plus 5cm}void Vision\+Input\+::detect\+With\+Camera (
+\begin{DoxyParamCaption}
+\item[{int}]{camera\+Code}
+\end{DoxyParamCaption}
+)}\hypertarget{classVisionInput_a54caed2ca4579dbbf274b2730bf11a01}{}\label{classVisionInput_a54caed2ca4579dbbf274b2730bf11a01}
+
+
+This method starts human detection from specified camera feed. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em camera\+Code} & of type int \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+none  Camera code depends which camera you want to use. Normally code 0 is used to start reading data from webcam. 
+\end{DoxyReturn}
+Setting up Camera object
+
+Finding humans
+
+Display image with bounding around humans
+
+Press E\+SC to exit \index{Vision\+Input@{Vision\+Input}!detect\+With\+Image@{detect\+With\+Image}}
+\index{detect\+With\+Image@{detect\+With\+Image}!Vision\+Input@{Vision\+Input}}
+\subsubsection[{\texorpdfstring{detect\+With\+Image(std\+::string filename)}{detectWithImage(std::string filename)}}]{\setlength{\rightskip}{0pt plus 5cm}void Vision\+Input\+::detect\+With\+Image (
+\begin{DoxyParamCaption}
+\item[{std\+::string}]{filename}
+\end{DoxyParamCaption}
+)}\hypertarget{classVisionInput_a6e00b038651a43978a351c3a54d27005}{}\label{classVisionInput_a6e00b038651a43978a351c3a54d27005}
+
+
+This method starts human detection from specified image file. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em camera\+Code} & of type string \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+none  Provide an image filename with full path in order to run human detection with image files 
+\end{DoxyReturn}
+\index{Vision\+Input@{Vision\+Input}!detect\+With\+Video\+File@{detect\+With\+Video\+File}}
+\index{detect\+With\+Video\+File@{detect\+With\+Video\+File}!Vision\+Input@{Vision\+Input}}
+\subsubsection[{\texorpdfstring{detect\+With\+Video\+File(std\+::string filename)}{detectWithVideoFile(std::string filename)}}]{\setlength{\rightskip}{0pt plus 5cm}void Vision\+Input\+::detect\+With\+Video\+File (
+\begin{DoxyParamCaption}
+\item[{std\+::string}]{filename}
+\end{DoxyParamCaption}
+)}\hypertarget{classVisionInput_a37b18210c09b26d1fb0cddf930882857}{}\label{classVisionInput_a37b18210c09b26d1fb0cddf930882857}
+
+
+This method starts human detection from specified video file. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em filename} & of type string \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+none  Provide a video filename with full path in order to run human detection with videofiles 
+\end{DoxyReturn}
+\index{Vision\+Input@{Vision\+Input}!setup\+Detector@{setup\+Detector}}
+\index{setup\+Detector@{setup\+Detector}!Vision\+Input@{Vision\+Input}}
+\subsubsection[{\texorpdfstring{setup\+Detector(std\+::string S\+V\+M\+Filename)}{setupDetector(std::string SVMFilename)}}]{\setlength{\rightskip}{0pt plus 5cm}void Vision\+Input\+::setup\+Detector (
+\begin{DoxyParamCaption}
+\item[{std\+::string}]{S\+V\+M\+Filename}
+\end{DoxyParamCaption}
+)}\hypertarget{classVisionInput_ad7e80a1b7ee9f63cb56ee0b6a1e96351}{}\label{classVisionInput_ad7e80a1b7ee9f63cb56ee0b6a1e96351}
+
+
+This method sets which S\+VM model will be used for detection. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em S\+V\+M\+Filename} & of type string \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+none  You can provide your own S\+VM classifier or you can use default classifier provided with Open\+CV 
+\end{DoxyReturn}
+Check if file already exist or not \index{Vision\+Input@{Vision\+Input}!show\+Image\+With\+Box@{show\+Image\+With\+Box}}
+\index{show\+Image\+With\+Box@{show\+Image\+With\+Box}!Vision\+Input@{Vision\+Input}}
+\subsubsection[{\texorpdfstring{show\+Image\+With\+Box()}{showImageWithBox()}}]{\setlength{\rightskip}{0pt plus 5cm}void Vision\+Input\+::show\+Image\+With\+Box (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{classVisionInput_ac76ded14c04baccb34d8cc3277258f68}{}\label{classVisionInput_ac76ded14c04baccb34d8cc3277258f68}
+
+
+This method creates bounding boxes around detected humans. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em none} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+none 
+\end{DoxyReturn}
+Dimensions of bounding box
+
+cv\+::imshow(\char`\"{}\+A\+C\+M\+E Robotics\char`\"{}, image); 
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+include/\hyperlink{VisionInput_8hpp}{Vision\+Input.\+hpp}\item 
+app/\hyperlink{VisionInput_8cpp}{Vision\+Input.\+cpp}\end{DoxyCompactItemize}
