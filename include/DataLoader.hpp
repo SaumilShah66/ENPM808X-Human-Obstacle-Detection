@@ -88,13 +88,6 @@ class DataLoader {
   cv::Mat loadNegImage(cv::Mat imageNeg);
 
   /**
-   * @brief Function to write image names
-   * @param dir of type string
-   * @return random string of type std::vector<cv::String>
-   */
-  std::vector<cv::String> give_image_names(std::string dir);
-
-  /**
    * @brief Function to set HOG parameters
    * @param none
    * @return none
