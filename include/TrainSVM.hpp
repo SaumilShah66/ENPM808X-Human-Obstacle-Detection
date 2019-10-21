@@ -24,102 +24,75 @@
 
 /**
  * @file      TrainSVM.hpp
- * @author    Naman Gupta (namangupta98) Driver
- * @author    Saumil Shah (SaumilShah66) Design Keeper
- * @author    Aman Virmani (AmanVirmani) Navigator
+ * @author    Saumil Shah (SaumilShah66) Driver
+ * @author    Naman Gupta (namangupta98) Navigator
+ * @author    Aman Virmani (AmanVirmani) Design Keeper
  * @copyright MIT License
  * @brief     TrainSVM Class declaration
  * @detail    Declared functions Class to train SVM using data from class 
- * DataLoader
+ *            DataLoader
  */
 
-#pragma once
+#ifndef INCLUDE_TRAINSVM_HPP_
+#define INCLUDE_TRAINSVM_HPP_
 
 #include <iostream>
 #include <string>
 #include <vector>
 #include <opencv2/opencv.hpp>
+#include <DataLoader.hpp>
+#include <sys/stat.h>
+#include <fstream>
+#include <sys/types.h>
 
 /**
- * @brief class DetectHuman
- * The class DetectHuman uses a trained SVM model to detect humans in an image 
- * and returns the pixel coordinates of the bounding boxes containing humans in
- * an image
+ * @brief class TrainSVM
+ * The class TrainSVM trains SVM using data from class DataLoader and returns 
+ * the trained data into a XML file
  */
 class TrainSVM {
  public:
   /**
-   * @brief constructor TrainSVM
-   * @param classifierFilename of type string
-   * @return none
+   * @brief Instance to store parameters needed for SVM of type
+   *        cv::Ptr<cv::ml::SVM>
    */
-  explicit TrainSVM(std::vector<double> parameters);
+  cv::Ptr<cv::ml::SVM> svm = cv::ml::SVM::create();
+
+  /**
+   * @brief Instance to take data from class DataLoader
+   */
+  DataLoader loadData;
 
   /**
    * @brief constructor TrainSVM
-   * @param classifierFilename of type string
+   * @param none
    * @return none
    */
   TrainSVM();
 
   /**
-   * @brief Function takes SVM parameters from user
-   * @param parameters of type std:vector<double>
+   * @brief Function to save trained SVM
+   * @param filename of type string
    * @return none
-   * The following function gives parameters to SVM classifier which
-   * are needed to train SVM
+   * The following function saves trained SVM in a file and takes the filename 
    */
-  void setParameters(std::vector<double> parameters);
+  void saveSVM(std::string filename);
 
   /**
-   * @brief Function sets directory path of positive training images
-   * @param directoryPath of type string
+   * @brief Function to start training
+   * @param none
    * @return none
+   * The following function initiates SVM training
    */
-  void setPositiveTrainingImagesDirectory(std::string directoryPath);
+  void startTraining();
 
   /**
-   * @brief Function sets directory path of negative training images
-   * @param directoryPath of type string
-   * @return none
+   * @brief Function to change data format into format used by OpenCV's SVM 
+   *        train method
+   * @param filename of type string
+   * @return training data of type cv::Mat
    */
-  void setNegativeTrainingImagesDirectory(std::string directoryPath);
-
-  /**
-   * @brief Function sets ground truth values for training data
-   * @param filesWithOutputs of type string
-   * @return none
-   */
-  void setGroundTruthValuesFilename(std::string filesWithOutputs);
-
-  /**
-   * @brief Function gets the directory name
-   * @param none
-   * @return directory name containing positive training images type string
-   */
-  std::string getPositiveTrainingImagesDirectory();
-
-  /**
-   * @brief Function gets the directory name
-   * @param none
-   * @return directory name containing negative training images type string
-   */
-  std::string getNegativeTrainingImagesDirectory();
-
-  /**
-   * @brief Function gets the filename
-   * @param none
-   * @return file name containing ground truth values for training data of
-   * 		   type string
-   */
-  std::string getGroundTruthValuesFilename();
-
-  /**
-   * @brief Function gives parameters of SVM classifier
-   * @param none
-   * @return parameters of SVM of type std::vector<double>
-   */
-  std::vector<double> getParameters();
+  cv::Mat prepareData();
 
   /**
    * @brief destructor TrainSVM
@@ -128,25 +101,30 @@ class TrainSVM {
    */
   ~TrainSVM();
 
- private:
   /**
-   * @brief Container for SVM parameters of type std::vector<double>
+   * @brief Function to check existing directory
+   * @param pathname of type string
+   * @return true or false as bool value
+   * The following function checks either the file exist or not and returns
+   * 'true' if exist and 'false' if not
    */
-  std::vector<double> parameters;
+  bool directoryExist(const std::string& pathname);
 
   /**
-   * @brief Container for positive image directory name of type string
+   * @brief Function to set directory for positive images
+   * @param dir of type string
+   * @return none
+   * The following function saves the positive images in a directory
    */
-  std::string positiveTrainingImagesDirectory;
+  void setPosDirectory(std::string dir);
 
   /**
-   * @brief Container for negative image directory name of type string
+   * @brief Function to set directory for negative images
+   * @param dir of type string
+   * @return none
+   * The following function saves the negative images in a directory
    */
-  std::string negativeTrainingImagesDirectory;
-
-  /**
-   * @brief Container to store filename containing ground truth values of
-   *        type string
-   */
-  std::string groundTruthValuesFilename;
+  void setNegDirectory(std::string dir);
 };
+
+#endif  // INCLUDE_DATALOADER_HPP_
