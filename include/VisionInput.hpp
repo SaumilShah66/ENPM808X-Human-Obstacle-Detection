@@ -109,6 +109,12 @@ class VisionInput {
    * @return none
    */
   void showImageWithBox();
+    /**
+   * @brief destructor VisionInput
+   * @param none
+   * @return none
+   */
+  ~VisionInput();
  private:
   /**
    * @brief Checks if given SVM classifier file exists or not
