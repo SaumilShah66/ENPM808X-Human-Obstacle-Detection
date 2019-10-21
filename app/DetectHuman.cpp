@@ -34,26 +34,36 @@
  */
 #include <DetectHuman.hpp>
 
-DetectHuman::DetectHuman() {
+
+DetectHuman::DetectHuman(){
+	
 }
 
-DetectHuman::DetectHuman(std::string classifierFilename) {
+void DetectHuman::setDefaultSVM(){
+	///Setting default detector
+	hog.setSVMDetector(cv::HOGDescriptor::getDefaultPeopleDetector());
+	std::cout << "Default detector has been set. Ready to use" << std::endl;
 }
 
-bool DetectHuman::loadModel(std::string fileNameOfTrainedClassifier) {
+void DetectHuman::setCustomSVM(std::string customSVMFile){
+	if(fileExist(customSVMFile)){
+		std::cout << "Loading SVM from " << customSVMFile << std::endl;
+		///getting SVM classifier
+		svm = svm->load(customSVMFile);
+		std::cout << "SVM loaded successfully "<< std::endl;
+		hog.setSVMDetector(svm->getSupportVectors());
+	}
+	else{
+		std::cout << "File does not exixt. Unable to load SVM" << std::endl;
+	}
 }
 
-std::vector<std::vector<int>> DetectHuman::findHumans(cv::Mat frame) {
+
+bool DetectHuman::fileExist(const std::string& filename){
+	struct stat info;
+	return (stat (filename.c_str(), &info) == 0);
 }
 
-void DetectHuman::setClassifierFilename(std::string filenameOfClassifier) {
-}
-
-std::string DetectHuman::getClassifierFilename() {
-}
-
-bool DetectHuman::fileExist(std::string fileName) {
-}
-
-DetectHuman::~DetectHuman() {
+DetectHuman::~DetectHuman(){
+	std::cout << "destroyed detector";
 }
