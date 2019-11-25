@@ -71,7 +71,7 @@ class DetectHuman {
    * @param none
    * @return none
    */
-  void setDefaultSVM();
+  virtual void setDefaultSVM();
   /**
    * @brief Method sets the SVM model trained by TrainSVM class
    * @param customSVMFile of type string
@@ -79,19 +79,19 @@ class DetectHuman {
    * Path of custom trained SVM model should be provided to the method
    * in order to use custom SVM with HOGDescriptor
    */
-  void setCustomSVM(std::string customSVMFile);
+  virtual void setCustomSVM(std::string customSVMFile);
   /**
    * @brief Function checks either the file already exists or not
    * @param fileName of type string
    * @return true if the file already exists and false if does not exist
    */
-  bool fileExist(const std::string& filename);
+  virtual bool fileExist(const std::string& filename);
   /**
    * @brief destructor DetectHuman
    * @param none
    * @return none
    */
-  ~DetectHuman();
+  virtual ~DetectHuman();
 };
 
 #endif  // INCLUDE_DETECTHUMAN_HPP_
