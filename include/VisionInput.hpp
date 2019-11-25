@@ -51,7 +51,7 @@
  * based Human detection, so that it can be used with live videos from camera sensor
  * or saved videos and image files.
  */
-class VisionInput {
+class VisionInput : public DetectHuman{
  public:
   /**
    * @brief constructor VisionInput
@@ -66,7 +66,7 @@ class VisionInput {
   /**
    * @brief Instance created of DetecHuman class for human detection with data fedd
    */
-  DetectHuman humanDetector;
+  // DetectHuman humanDetector;
   /**
    * @brief Container to store detected human positions in form of pixel coordinates
    */
@@ -122,7 +122,7 @@ class VisionInput {
    * @param filename of type string
    * @return true if file exists and false otehrwise
    */
-  bool fileExist(const std::string& filename);
+  // bool fileExist(const std::string& filename);
 };
 
 #endif  // INCLUDE_VISIONINPUT_HPP_
