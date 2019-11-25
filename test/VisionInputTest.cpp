@@ -37,12 +37,27 @@
 #include <opencv2/opencv.hpp>
 #include <iostream>
 #include <VisionInput.hpp>
-
+#include <DetectHuman.hpp>
 /** 
  * @brief Test for camera sensor read when no camera is present
  * It checks whether image container of class object is empty or not in order
  * to make sure it is not reading any data as no camera is present
  */
+
+class MockDetect : public DetectHuman {
+ public:
+  MOCK_METHOD0(setDefaultSVM, void ());
+
+  MOCK_CONST_METHOD1(fileExist, bool(const std::string&));
+};
+
+TEST(GeneralPidControllerTest, setGainValuesTest) {
+    mockGeneralPidController gpid;
+    VisionInput vis;
+    EXPECT_CALL(vis, fileExist("File.txt")).Times(1).WillOnce(Return(true));
+    EXPECT_EQ(true, vis.fileExist("File.txt"));
+}
+
 
 TEST(CameraCheck, NoPresentCameraCheck) {
   VisionInput vision;
