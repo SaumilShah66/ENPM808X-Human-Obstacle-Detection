@@ -42,9 +42,9 @@ VisionInput::VisionInput() {
 void VisionInput::setupDetector(std::string SVMFilename) {
   /// Check if file already exist or not
   if (SVMFilename == "0") {
-    humanDetector.setDefaultSVM();
-  } else if (humanDetector.fileExist(SVMFilename)) {
-    humanDetector.setCustomSVM(SVMFilename);
+    setDefaultSVM();
+  } else if (fileExist(SVMFilename)) {
+    setCustomSVM(SVMFilename);
   } else {
     std::cout << "File does not exist";
   }
@@ -62,7 +62,7 @@ void VisionInput::detectWithCamera(int cameraCode) {
       if (image.empty())
         break;
       /// Finding humans
-      humanDetector.hog.detectMultiScale(image, boundingBoxes, 0,
+      hog.detectMultiScale(image, boundingBoxes, 0,
                                          cv::Size(8, 8), cv::Size(), 1.05, 2,
                                          false);
       /// Display image with bounding around humans
@@ -89,7 +89,7 @@ void VisionInput::detectWithVideoFile(std::string filename) {
       cap >> image;
       if (image.empty())
         break;
-      humanDetector.hog.detectMultiScale(image, boundingBoxes, 0,
+      hog.detectMultiScale(image, boundingBoxes, 0,
                                          cv::Size(8, 8), cv::Size(), 1.05, 2,
                                          false);
       showImageWithBox();
@@ -108,7 +108,7 @@ void VisionInput::detectWithImage(std::string filename) {
   image.release();
   image = cv::imread(filename);
   if (!image.empty()) {
-    humanDetector.hog.detectMultiScale(image, boundingBoxes, 0, cv::Size(8, 8),
+    hog.detectMultiScale(image, boundingBoxes, 0, cv::Size(8, 8),
                                        cv::Size(), 1.05, 2, false);
     showImageWithBox();
   } else {
